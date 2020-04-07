@@ -12,14 +12,14 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-    <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
+    <a class="navbar-brand ml-4 mr-5" href="home.html"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./quemSomos.html">Quem somos</a>
@@ -35,13 +35,238 @@
         </li>
       </ul>
       <div class="">
-        <button class="btn border border-dark bg-light">
+        <button class="btn border border-dark bg-light" data-toggle="modal" data-target="#login">
           Log in
         </button>
-        <button class="btn bg-dark text-white">
+        <button class="btn bg-dark text-white" data-toggle="modal" data-target="#registrar" data-whatever="@mdo">
           Registrar
         </button>
       </div>
     </div>
   </nav>
+  <!-- MODAL LOGIN -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Faça seu Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email" class="col-form-label">Email</label>
+              <input type="email" required class="form-control" id="email" name="email" placeholder="email@email.com">
+            </div>
+            <div class="form-group">
+              <label for="senha" class="col-form-label">Senha</label>
+              <input type="password" required class="form-control" id="senha" name="senha" placeholder="sua senha">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn bg-dark text-white" data-dismiss="modal">Voltar</button>
+          <button type="button" class="btn bg-dark text-white">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para cadastrar uma conta -->
+  <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign up for a free account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="nome">Nome</label>
+                <input type="text" required class="form-control" id="nome" placeholder="Seu nome">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" required class="form-control" id="sobrenome" placeholder="Seu Sobrenome">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" required class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password" required class="form-control" id="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-8">
+                <label for="rua">Rua</label>
+                <input type="text" required class="form-control" id="rua" placeholder="Rua">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="numero">Número</label>
+                <input type="number" required class="form-control" id="numero" placeholder="N° da casa">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input type="text" required class="form-control" id="bairro" placeholder="bairro" placeholder="Nome do bairro">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="cidade">Cidade</label>
+                <input type="text" required class="form-control" id="cidade" placeholder="Nome da cidade">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="estado">Estado</label>
+                <input type="text" required class="form-control" id="estado" placeholder="Nome do estado">
+                
+              </div>
+             
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn bg-dark text-white" data-dismiss="modal">Voltar</button>
+              <button type="button" class="btn bg-dark text-white">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section id="quem-somos" class="py-5 mb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 py-5 mb-5">
+            <h2 class="text-center">Quem somos</h2>
+            <p class="text-center">Abaixo saiba um pouco mais sobre nós, seja bem vindo e faça bom proveito!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">   
+            <p>
+              O SwapBook foi desenvolvido por 6 jovens estudantes que querem aproximar as pessoas da leitura. 
+            </p>
+            <h5>Membros:</h5>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Carol Molina</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Christian Favaro</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>David Lemos</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Daniel Andrade</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p>Edson Marques</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-7 ">
+            <img src="assets/library.jpg" class="img-fluid" />
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="row ">
+        <div class="col-md-3 ">
+          <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
+        </div>
+        
+        <div class="col-md-3">
+          <h4>Sobre</h4>
+          <ul class="footer-nav">
+            <li>
+              <a class="text-dark" href="">Quem Somos</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-bold">Suporte</h4>
+          <ul class="footer-nav">
+            <li >
+              <a class="text-dark" href="">Como Fazer Parte</a>
+            </li>
+            <li>
+              <a class="text-dark" href="">Fale Conosco</a>
+            </li>
+            <li>
+              <a class="text-dark" href="">F.A.Q</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-md-3">
+          <h4>Acessar</h4>
+          <ul class="footer-nav">
+            <li>
+              <a class="text-dark" href="">Entrar</a>
+            </li>
+            <li>
+              <a class="text-dark" href="">Registrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="text-darkr">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 flex">
+         <span> © SwapBook, Inc. 2020. </span>
+        </div>
+        <div class="col-md-6 flex">
+          <span> siga-nos: </span>
+          <div>
+            <img class="img-logo" src="./assets/instagram.svg" alt="logo do instagram">
+            <img class="img-logo" src="./assets/facebook.svg" alt="logo do facebook">
+            <img class="img-logo" src="./assets/linkedin.svg" alt="logo do linkedin">
+          </div>
+         </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = button.data('whatever') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('New message to ' + recipient)
+    modal.find('.modal-body input').val(recipient)
+  })
+  </script>
 </body>
+</html>
