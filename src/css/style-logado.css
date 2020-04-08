@@ -5,7 +5,7 @@
 }  
 
 body{
-    padding-top: 73px;
+    padding-top: 65px;
 }
 
 
@@ -46,6 +46,25 @@ body{
 .menu-lateral li a {
     color: black;
     font-weight: 600;
+}
+
+
+
+.header-home-logado-imagem{
+    background: url(../assets/header-home-logado.png) no-repeat right top;
+    background-size: contain;
+    height: 400px;
+}
+
+.header-home-logado h2{
+    color: black;
+    font-weight: bold;
+    margin: 25px 0 20px;
+    text-transform: uppercase;
+}
+
+.modal .cadastro-livro label{
+    display: none;
 }
 
 .lista-livros .topo{
