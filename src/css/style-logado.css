@@ -51,7 +51,7 @@ body{
 
 
 .header-home-logado-imagem{
-    background: url(../assets/header-home-logado.png) no-repeat right top;
+    background: url(../assets/bg-header-home-logado.png) no-repeat right top;
     background-size: contain;
     height: 400px;
 }
@@ -81,19 +81,17 @@ body{
     color: black;
     font-weight: bold;
 }
-.owl-carousel .capa-livro{
+.capa-livro{
     max-height: 200px;
     width: auto !important;
     margin: auto;
 }
-.owl-carousel .nome-livro{
+.nome-livro{
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-
 
 .owl-carousel .btn{
     text-transform: uppercase;
@@ -105,6 +103,11 @@ body{
 
 .owl-dots{
     margin: 30px auto !important;
+}
+
+
+.pagination a{
+    color: black
 }
 
 @media (max-width: 992px) { 
