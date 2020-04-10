@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/busca.css">
+    <!-- Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+    <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Quem somos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Como fazer parte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contato</a>
+        </li>
+      </ul>
+      <div class="">
+        <button class="btn border border-dark bg-light">
+          Log in
+        </button>
+        <button class="btn bg-dark text-white">
+          Registrar
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="row" id="BuscaPageRow">
+      <div class="listaLivros col-lg-6 col-sm-12">
+        
+        <div class="livroBox container d-flex border-bottom py-3">
+            <div class="livro-imagem-container align-self-center">
+              <a href="">
+                <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+              </a>
+            </div>
+          <div class="livroInfo container d-flex flex-column align-items-start">
+            <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+            <span class="detalheLivro">Autor: Fulano da Silva</span>
+            <div class="detalhesLivro d-flex mt-3">
+              Doação
+              <span class="detalheLivroSepara">-</span>
+              Livro
+              <span class="detalheLivroSepara">-</span>
+              Suspense
+            </div>
+            <div class="livroDistancia mt-auto">
+              <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+            </div>
+            <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+          <div class="livroContato d-none d-md-block align-self-center">
+            <div class="avatar text-center d-flex justify-content-around">
+              <div class="img-avatar">
+                <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+              </div>              
+              <span class="livroFontMenor">Cristian Favaro</span>
+            </div>
+            <div class="mt-2 d-flex justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+          <div class="livro-imagem-container align-self-center">
+            <a href="">
+              <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+            </a>
+          </div>
+        <div class="livroInfo container d-flex flex-column align-items-start">
+          <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+          <span class="detalheLivro">Autor: Fulano da Silva</span>
+          <div class="detalhesLivro d-flex mt-3">
+            Doação
+            <span class="detalheLivroSepara">-</span>
+            Livro
+            <span class="detalheLivroSepara">-</span>
+            Suspense
+          </div>
+          <div class="livroDistancia mt-auto">
+            <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+          </div>
+          <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        <div class="livroContato d-none d-md-block align-self-center">
+          <div class="avatar text-center d-flex justify-content-around">
+            <div class="img-avatar">
+              <span class="fa-stack fa-2x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>              
+            <span class="livroFontMenor">Cristian Favaro</span>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+            <div class="livro-imagem-container align-self-center">
+              <a href="">
+                <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+              </a>
+            </div>
+          <div class="livroInfo container d-flex flex-column align-items-start">
+            <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+            <span class="detalheLivro">Autor: Fulano da Silva</span>
+            <div class="detalhesLivro d-flex mt-3">
+              Doação
+              <span class="detalheLivroSepara">-</span>
+              Livro
+              <span class="detalheLivroSepara">-</span>
+              Suspense
+            </div>
+            <div class="livroDistancia mt-auto">
+              <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+            </div>
+            <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+          <div class="livroContato d-none d-md-block align-self-center">
+            <div class="avatar text-center d-flex justify-content-around">
+              <div class="img-avatar">
+                <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+              </div>              
+              <span class="livroFontMenor">Cristian Favaro</span>
+            </div>
+            <div class="mt-2 d-flex justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="livroBox container d-flex border-bottom py-3">
+          <div class="livro-imagem-container align-self-center">
+            <a href="">
+              <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+            </a>
+          </div>
+        <div class="livroInfo container d-flex flex-column align-items-start">
+          <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+          <span class="detalheLivro">Autor: Fulano da Silva</span>
+          <div class="detalhesLivro d-flex mt-3">
+            Doação
+            <span class="detalheLivroSepara">-</span>
+            Livro
+            <span class="detalheLivroSepara">-</span>
+            Suspense
+          </div>
+          <div class="livroDistancia mt-auto">
+            <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+          </div>
+          <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        <div class="livroContato d-none d-md-block align-self-center">
+          <div class="avatar text-center d-flex justify-content-around">
+            <div class="img-avatar">
+              <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+            </div>              
+            <span class="livroFontMenor">Cristian Favaro</span>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+        <div class="livro-imagem-container align-self-center">
+          <a href="">
+            <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+          </a>
+        </div>
+      <div class="livroInfo container d-flex flex-column align-items-start">
+        <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+        <span class="detalheLivro">Autor: Fulano da Silva</span>
+        <div class="detalhesLivro d-flex mt-3">
+          Doação
+          <span class="detalheLivroSepara">-</span>
+          Livro
+          <span class="detalheLivroSepara">-</span>
+          Suspense
+        </div>
+        <div class="livroDistancia mt-auto">
+          <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+        </div>
+        <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+          <span class="fa-stack fa-1x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-1x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-1x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+      </div>
+      <div class="livroContato d-none d-md-block align-self-center">
+        <div class="avatar text-center d-flex justify-content-around">
+          <div class="img-avatar">
+            <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+          </div>              
+          <span class="livroFontMenor">Cristian Favaro</span>
+        </div>
+        <div class="mt-2 d-flex justify-content-center">
+          <span class="fa-stack fa-1x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-1x">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+          </span>
+        </div>
+      </div>
+        </div>
+  
+        <div class="livroBox container d-flex border-bottom py-3">
+            <div class="livro-imagem-container align-self-center">
+              <a href="">
+                <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+              </a>
+            </div>
+          <div class="livroInfo container d-flex flex-column align-items-start">
+            <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+            <span class="detalheLivro">Autor: Fulano da Silva</span>
+            <div class="detalhesLivro d-flex mt-3">
+              Doação
+              <span class="detalheLivroSepara">-</span>
+              Livro
+              <span class="detalheLivroSepara">-</span>
+              Suspense
+            </div>
+            <div class="livroDistancia mt-auto">
+              <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+            </div>
+            <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+          <div class="livroContato d-none d-md-block align-self-center">
+            <div class="avatar text-center d-flex justify-content-around">
+              <div class="img-avatar">
+                <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+              </div>              
+              <span class="livroFontMenor">Cristian Favaro</span>
+            </div>
+            <div class="mt-2 d-flex justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="livroBox container d-flex border-bottom py-3">
+              <div class="livro-imagem-container align-self-center">
+                <a href="">
+                  <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+                </a>
+              </div>
+            <div class="livroInfo container d-flex flex-column align-items-start">
+              <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+              <span class="detalheLivro">Autor: Fulano da Silva</span>
+              <div class="detalhesLivro d-flex mt-3">
+                Doação
+                <span class="detalheLivroSepara">-</span>
+                Livro
+                <span class="detalheLivroSepara">-</span>
+                Suspense
+              </div>
+              <div class="livroDistancia mt-auto">
+                <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+              </div>
+              <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+                <span class="fa-stack fa-1x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-1x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-1x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </div>
+            <div class="livroContato d-none d-md-block align-self-center">
+              <div class="avatar text-center d-flex justify-content-around">
+                <div class="img-avatar">
+                  <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+                </div>              
+                <span class="livroFontMenor">Cristian Favaro</span>
+              </div>
+              <div class="mt-2 d-flex justify-content-center">
+                <span class="fa-stack fa-1x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="fa-stack fa-1x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+                </span>
+              </div>
+            </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+          <div class="livro-imagem-container align-self-center">
+            <a href="">
+              <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+            </a>
+          </div>
+        <div class="livroInfo container d-flex flex-column align-items-start">
+          <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+          <span class="detalheLivro">Autor: Fulano da Silva</span>
+          <div class="detalhesLivro d-flex mt-3">
+            Doação
+            <span class="detalheLivroSepara">-</span>
+            Livro
+            <span class="detalheLivroSepara">-</span>
+            Suspense
+          </div>
+          <div class="livroDistancia mt-auto">
+            <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+          </div>
+          <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        <div class="livroContato d-none d-md-block align-self-center">
+          <div class="avatar text-center d-flex justify-content-around">
+            <div class="img-avatar">
+              <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+            </div>              
+            <span class="livroFontMenor">Cristian Favaro</span>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+            <div class="livro-imagem-container align-self-center">
+              <a href="">
+                <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+              </a>
+            </div>
+          <div class="livroInfo container d-flex flex-column align-items-start">
+            <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+            <span class="detalheLivro">Autor: Fulano da Silva</span>
+            <div class="detalhesLivro d-flex mt-3">
+              Doação
+              <span class="detalheLivroSepara">-</span>
+              Livro
+              <span class="detalheLivroSepara">-</span>
+              Suspense
+            </div>
+            <div class="livroDistancia mt-auto">
+              <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+            </div>
+            <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+          <div class="livroContato d-none d-md-block align-self-center">
+            <div class="avatar text-center d-flex justify-content-around">
+              <div class="img-avatar">
+                <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+              </div>              
+              <span class="livroFontMenor">Cristian Favaro</span>
+            </div>
+            <div class="mt-2 d-flex justify-content-center">
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="fa-stack fa-1x">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+          <div class="livro-imagem-container align-self-center">
+            <a href="">
+              <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+            </a>
+          </div>
+        <div class="livroInfo container d-flex flex-column align-items-start">
+          <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+          <span class="detalheLivro">Autor: Fulano da Silva</span>
+          <div class="detalhesLivro d-flex mt-3">
+            Doação
+            <span class="detalheLivroSepara">-</span>
+            Livro
+            <span class="detalheLivroSepara">-</span>
+            Suspense
+          </div>
+          <div class="livroDistancia mt-auto">
+            <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+          </div>
+          <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        <div class="livroContato d-none d-md-block align-self-center">
+          <div class="avatar text-center d-flex justify-content-around">
+            <div class="img-avatar">
+              <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+            </div>              
+            <span class="livroFontMenor">Cristian Favaro</span>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        </div>
+
+        <div class="livroBox container d-flex border-bottom py-3">
+          <div class="livro-imagem-container align-self-center">
+            <a href="">
+              <img class="livro-img" src="https://d1pkzhm5uq4mnt.cloudfront.net/imagens/capas/92f832b9da3c95967cef04f0577edd6e346a5509.jpg" alt="">
+            </a>
+          </div>
+        <div class="livroInfo container d-flex flex-column align-items-start">
+          <h6 class="tituloLivro">A menina que Roubava Livros</h6>
+          <span class="detalheLivro">Autor: Fulano da Silva</span>
+          <div class="detalhesLivro d-flex mt-3">
+            Doação
+            <span class="detalheLivroSepara">-</span>
+            Livro
+            <span class="detalheLivroSepara">-</span>
+            Suspense
+          </div>
+          <div class="livroDistancia mt-auto">
+            <span class="livroFontMenor">Parque Trianon - 1,2km</span>
+          </div>
+          <div class="livroContato d-md-none container d-flex mt-2 justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        <div class="livroContato d-none d-md-block align-self-center">
+          <div class="avatar text-center d-flex justify-content-around">
+            <div class="img-avatar">
+              <img src="https://www.cristianfavaro.com.br/media/imagens_author/WhatsApp_Image_2019-06-18_at_14.10.29_1_dZyEJRn.jpeg" alt="..." class="img-fluid">
+            </div>              
+            <span class="livroFontMenor">Cristian Favaro</span>
+          </div>
+          <div class="mt-2 d-flex justify-content-center">
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-comments fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-1x">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+          </div>
+        </div>
+        </div>
+
+      </div>
+
+      <aside class="d-none d-md-block col-lg-6 col-sm-12 mapaBuscaLivros" id="mapa" style="background-image: url('./assets/mapaRascunho.png');">
+      </aside>  
+    </div>
+  </main>
+
+
+    <footer class="footer">
+      <div class="container">
+        
+        <div class="row ">
+          <div class="col-md-3 ">
+            <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
+          </div>
+          
+          <div class="col-md-3">
+            <h4>Sobre</h4>
+            <ul class="footer-nav">
+              <li>
+                <a class="text-dark" href="">Quem Somos</a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="col-md-3">
+            <h4 class="text-bold">Suporte</h4>
+            <ul class="footer-nav">
+              <li >
+                <a class="text-dark" href="">Como Fazer Parte</a>
+              </li>
+              <li>
+                <a class="text-dark" href="">Fale Conosco</a>
+              </li>
+              <li>
+                <a class="text-dark" href="">F.A.Q</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-md-3">
+            <h4>Acessar</h4>
+            <ul class="footer-nav">
+              <li>
+                <a class="text-dark" href="">Entrar</a>
+              </li>
+              <li>
+                <a class="text-dark" href="">Registrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="text-darkr">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 flex">
+           <span> © SwapBook, Inc. 2020. </span>
+          </div>
+          <div class="col-md-6 flex">
+            <span> siga-nos: </span>
+            <div>
+              <img class="img-logo" src="./assets/instagram.svg" alt="logo do instagram">
+              <img class="img-logo" src="./assets/facebook.svg" alt="logo do facebook">
+              <img class="img-logo" src="./assets/linkedin.svg" alt="logo do linkedin">
+            </div>
+           </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
