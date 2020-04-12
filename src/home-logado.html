@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style-logado.css">
+  <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+
+  <title>SwapBook</title>
+</head>
+
+<body>
+  <nav class="navbar  fixed-top navbar-expand-lg navbar-light border-bottom p-2">
+    <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <form class="form-inline my-4 my-lg-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
+            aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
+            style="width:  300px; max-width: 100%;">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">
+              <img src="assets/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
+            </span>
+          </div>
+        </div>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active mx-2 d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <img src="assets/icons/mensagem.svg" width="25px" class="img-fluid mx-auto" />
+          </a>
+        </li>
+        <li class="nav-item mx-2 d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <img src="assets/icons/notificacao.svg" width="25px" class="img-fluid mx-auto" />
+          </a>
+        </li>
+        <li class="nav-item dropdown  mx-2 d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 30px;" />
+            David Lemos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Editar perfil</a>
+            <a class="dropdown-item" href="#">Sair</a>
+          </div>
+        </li>
+        <li class="d-block d-lg-none">
+
+          <ul class="menu-topo-mobile">
+            <li><a href="#">Livros para troca</a></li>
+            <li><a href="#">Livros para doação</a></li>
+            <li><a href="#">Livros de interesse</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="#">Compartilhar seu livro</a></li>
+            <li><a href="#">Seus livros para troca</a></li>
+            <li><a href="#">Seus livros para doação</a></li>
+            <li><a href="#">Seus livros de interesse</a></li>
+            <li><a href="#">Seus livros emprestados</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 d-none d-lg-block position-fixed col-lateral">
+          <div class="d-block">
+            <div class="usuario">
+              <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 50px;" />
+              <span class="nome-usuario">David Lemos</span>
+            </div>
+            <div>
+              <ul class="menu-lateral">
+                <li><a href="#">Seus livros para troca</a></li>
+                <li><a href="#">Seus livros para doação</a></li>
+                <li><a href="#">Seus livros de interesse</a></li>
+                <li><a href="#">Seus livros emprestados</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-10 offset-lg-2">
+
+          <div class="header-home-logado">
+            <div class="row">
+              <div class="col-lg-6">
+                <h2>Compartilhe leituras</h2>
+                <p>Pare por um instante e imagine alguém lendo um livro. Esta pessoa está sozinha, certo? Pelo menos na maioria das vezes é esta a imagem que temos do ato de leitura, digamos, ideal.</p>
+                <p>Esquecemos que compartilhar leituras com o outro pode fazer parte da formação literária e ser um benefício fundamental para que se construa, de fato, um país de leitores.</p>
+                <p>Isso porque o coletivo tem muita potência.</p>
+                <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#compartilharLivroModal">
+                  Compartilhar meu livro
+                </button>                
+              </div>
+              <div class="col-lg-6 p-0 header-home-logado-imagem order-first order-lg-2">
+                
+              </div>
+            </div>
+            
+          </div>
+
+          
+          
+          <div class="lista-livros">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-10 topo">
+                  <a href="#">
+                    <h2>Livros disponíveis para doação <img src="./assets/icons/chevron-right.svg" width="24px"
+                        class="img-fluid d-inline d-lg-none"> </h2>
+                  </a>
+                </div>
+                <div class="col-lg-2 d-none d-lg-block topo text-right">
+                  <a href="#">Ver todos <img src="./assets/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
+                </div>
+
+                <div class="col-lg-12 pr-0">
+                  <div class="owl-carousel owl-theme">
+                    <div class="text-center">
+                      <img src="./assets/img-livros/1.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lista-livros">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-10 topo">
+                  <a href="#">
+                    <h2>Livros disponíveis para troca <img src="./assets/icons/chevron-right.svg" width="24px"
+                        class="img-fluid d-inline d-lg-none"> </h2>
+                  </a>
+                </div>
+                <div class="col-lg-2 d-none d-lg-block topo text-right">
+                  <a href="#">Ver todos <img src="./assets/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
+                </div>
+
+                <div class="col-lg-12 pr-0">
+                  <div class="owl-carousel owl-theme">
+                    <div class="text-center">
+                      <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                    <div class="text-center">
+                      <img src="./assets/img-livros/10.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <p class="m-1 nome-livro">Nome do livro</p>
+                      <p class="m-0 usuario">por Usuario</p>
+                      <p class="local">local</p>
+                      <a href="#" class="btn btn-primary mx-auto btn-sm py-2">Quero este livro</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    </section>
+  </main>
+
+  <div class="modal fade" id="compartilharLivroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">    
+          <h5>Cadastrar livro</h5>      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="cadastro-livro">
+            <form>
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img src="./assets/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
+                  <div class="form-group">
+                    <label for="nomeLivro">Nome do livro</label>
+                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                  </div>
+                  <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                  </div>
+                  <div class="form-group">
+                    <label for="acao">O que deseja fazer?</label>
+                    <select id="acao" class="form-control">
+                      <option selected>O que deseja fazer?</option>
+                      <option>Doar</option>
+                      <option>Emprestar</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="localTroca">Local de encontro para troca</label>
+                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-12">
+                  <input class="btn btn-primary px-3 my-2" type="submit" value="Cadastrar livro">
+                </div>
+              </div>
+              
+              
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./js/owl.carousel.min.js"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      responsiveClass: true,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1.5,
+
+        },
+        600: {
+          items: 2.5,
+        },
+        1000: {
+          items: 4.5,
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}  
+
+body{
+    padding-top: 65px;
+}
+
+
+.navbar{
+    box-shadow: 0 0 4px 0px #000;
+    background-color: white;
+}
+
+.menu-topo-mobile li{
+    padding: 8px 0;
+}
+.menu-topo-mobile li a{
+    color: black;
+}
+
+.col-lateral{
+    height: 100vh;
+    background-color: #E5E5E5;
+    padding-top: 35px;
+}
+
+.usuario{
+    margin-bottom: 60px;
+}
+.nome-usuario{
+    size: 2em;
+    font-weight: bold;
+}
+
+.menu-lateral  {
+    list-style: none;    
+}
+
+.menu-lateral li{
+    padding: 16px 5px;
+}
+
+.menu-lateral li a {
+    color: black;
+    font-weight: 600;
+}
+
+
+
+.header-home-logado-imagem{
+    background: url(../assets/bg-header-home-logado.png) no-repeat right top;
+    background-size: contain;
+    height: 400px;
+}
+
+.header-home-logado h2{
+    color: black;
+    font-weight: bold;
+    margin: 25px 0 20px;
+    text-transform: uppercase;
+}
+
+.modal .cadastro-livro label{
+    display: none;
+}
+
+.lista-livros .topo{
+    margin: 40px 0;
+}
+
+.lista-livros .topo a {    
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+}
+.lista-livros .topo h2{
+    font-size: 24px;    
+    color: black;
+    font-weight: bold;
+}
+.capa-livro{
+    max-height: 200px;
+    width: auto !important;
+    margin: auto;
+}
+.nome-livro{
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.owl-carousel .btn{
+    text-transform: uppercase;
+}
+.btn-primary{
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+
+.owl-dots{
+    margin: 30px auto !important;
+}
+
+
+.pagination a{
+    color: black
+}
+
+@media (max-width: 992px) { 
+    .navbar-brand img{
+        width: 126px;
+    }
+}
