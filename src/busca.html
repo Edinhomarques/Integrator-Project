@@ -5,47 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style-logado.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/busca.css">
     <!-- Font Awesome -->
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light border-bottom">
-    <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook" ></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+   <nav class="navbar  fixed-top navbar-expand-lg navbar-light border-bottom p-2">
+    <a class="navbar-brand ml-4 mr-5" href="home-logado.html"><img src="./assets/logo.png" alt="Logo SwapBook"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <form class="form-inline my-4 my-lg-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
+            aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
+            style="width:  300px; max-width: 100%;">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">
+              <img src="assets/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
+            </span>
+          </div>
+        </div>
+      </form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active mx-2 d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <img src="assets/icons/mensagem.svg" width="25px" class="img-fluid mx-auto" />
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Quem somos</a>
+        <li class="nav-item mx-2 d-none d-lg-block">
+          <a class="nav-link" href="#">
+            <img src="assets/icons/notificacao.svg" width="25px" class="img-fluid mx-auto" />
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Como fazer parte</a>
+        <li class="nav-item dropdown  mx-2 d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 30px;" />
+            David Lemos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Editar perfil</a>
+            <a class="dropdown-item" href="#">Sair</a>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
+        <li class="d-block d-lg-none">
+
+          <ul class="menu-topo-mobile">
+            <li><a href="#">Livros para troca</a></li>
+            <li><a href="#">Livros para doação</a></li>
+            <li><a href="#">Livros de interesse</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="#">Compartilhar seu livro</a></li>
+            <li><a href="#">Seus livros para troca</a></li>
+            <li><a href="#">Seus livros para doação</a></li>
+            <li><a href="#">Seus livros de interesse</a></li>
+            <li><a href="#">Seus livros emprestados</a></li>
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+
         </li>
       </ul>
-      <div class="">
-        <button class="btn border border-dark bg-light">
-          Log in
-        </button>
-        <button class="btn bg-dark text-white">
-          Registrar
-        </button>
-      </div>
     </div>
   </nav>
-
   <main>
     <div class="row" id="BuscaPageRow">
       <div class="listaLivros col-lg-6 col-sm-12">
