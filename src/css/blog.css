@@ -1,0 +1,123 @@
+.blog {
+  display: flex;
+}
+
+.noticias {
+  width: 80%;
+}
+
+.menu-lateral {
+  background-color: #ccc;
+  width: 25%;
+  height: 750px;
+  padding-left: 10px;
+  padding-top: 70px;
+}
+
+.list-group-item {
+  background-color: #ccc;
+}
+
+#post-recentes {
+  margin-top: 50px;
+}
+
+.noticias > div {
+  width: 80%;
+  margin-left: 50px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.noticias .titulo p {
+  font-size: 20px;
+}
+
+.postagem p {
+  font-size: 18px;
+}
+
+.postagem {
+  width: 100%;
+  /*height: 250px;*/
+  border: 1.4px solid #ccc;
+  margin-top: 30px;
+  padding: 20px;
+  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.45);
+}
+
+.postagem img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30%;
+  height: 250px;
+}
+
+.conteudo{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.conteudo div {
+  padding: 0px 20px;
+}
+
+.conteudo div a {
+  margin-bottom: 0px;
+}
+
+.menu-lateral a {
+  color: black;
+}
+
+#saibamais img {
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#saibamais section {
+  margin: 30px 30px;
+}
+
+#saibamais p {
+  font-size: 23px;
+}
+
+@media(max-width: 883px) {
+  .blog {
+    display: block;
+  }
+
+  .noticias {
+    width: 100%;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .noticias > div {
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+
+  .conteudo {
+    display: block;
+  }
+
+  .postagem img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 250px;
+  }
+}
