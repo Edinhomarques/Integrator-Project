@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* configuracao caixa do livro */
+
+.detalheLivroSepara{
+    padding: 0 4px;
+}
+
+h6.tituloLivro{
+    font-size: 1.5em;
+}
+
+.livro-imagem-container{
+    text-align: center;
+    position: relative;
+}
+
+
+.livro-imagem-container img {
+    height: auto;
+    width: auto;
+    max-height: 197px;
+    margin: 0 auto;
+    background-color: #FFF;
+}
+
+
+/* 
+.imagemLivro{    
+    height: 150px;
+    width: 92px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
+
+span.detalheLivro{
+    font-size: small;
+}
+
+.avatar{
+    flex-direction: column;
+}
+.avatar img {
+    max-width: 60px;
+    min-width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.avatar span.livroFontMenor{
+    font-size: small;
+}
+
+.fa-stack{
+    position: auto !important;
+}
+
+
+/* Configuracao Mapa */
+
+.boxAside{
+    background-color: cadetblue;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.livroBox{
+    position: relative;
+    margin: auto;
+}
+
+#BuscaPageRow{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.mapaBuscaLivros{
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+}
+
+
+
+
+
+
+/* Tela menor */
+
