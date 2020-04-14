@@ -40,17 +40,26 @@ body{
 }
 
 .menu-lateral li{
-    padding: 16px 5px;
+    padding: 7px 5px;
+}
+
+.sessao-menu{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #495057;
+    letter-spacing: 1px;
 }
 
 .menu-lateral li a {
     color: black;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .menu-lateral .dropdown-divider{
     border-top: 1px solid #a2a2a2 !important;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 
