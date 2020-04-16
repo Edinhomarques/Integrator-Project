@@ -32,17 +32,7 @@
           </div>
         </div>
       </form>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active mx-2 d-none d-lg-block">
-          <a class="nav-link" href="#">
-            <img src="assets/icons/mensagem.svg" width="25px" class="img-fluid mx-auto" />
-          </a>
-        </li>
-        <li class="nav-item mx-2 d-none d-lg-block">
-          <a class="nav-link" href="#">
-            <img src="assets/icons/notificacao.svg" width="25px" class="img-fluid mx-auto" />
-          </a>
-        </li>
+      <ul class="navbar-nav ml-auto">        
         <li class="nav-item dropdown  mx-2 d-none d-lg-block">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -50,23 +40,20 @@
             David Lemos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Editar perfil</a>
-            <a class="dropdown-item" href="#">Sair</a>
+            <a class="dropdown-item" href="perfil.html">Editar perfil</a>
+            <a class="dropdown-item" href="home.html">Sair</a>
           </div>
         </li>
         <li class="d-block d-lg-none">
 
-          <ul class="menu-topo-mobile">
-            <li><a href="#">Livros para troca</a></li>
-            <li><a href="#">Livros para doação</a></li>
-            <li><a href="#">Livros de interesse</a></li>
+          <ul class="menu-topo-mobile pb-3">
+            <li><a href="listar-livros-para-troca.html">Livros para troca</a></li>
+            <li><a href="listar-livros-para-doacao.html">Livros para doação</a></li>
             <div class="dropdown-divider"></div>
-            <li><a href="#">Compartilhar seu livro</a></li>
-            <li><a href="#">Seus livros para troca</a></li>
-            <li><a href="#">Seus livros para doação</a></li>
-            <li><a href="#">Seus livros de interesse</a></li>
-            <li><a href="#">Seus livros emprestados</a></li>
-            <li><a href="#">Chat</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
+            <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>
+            <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
+            <li><a href="perfil.html">Editar perfil</a>
             <li><a href="#">Sair</a></li>
           </ul>
 
@@ -84,8 +71,8 @@
               <ul class="menu-lateral">
                 <li class="sessao-menu">David Lemos</li>  
                 <li><a data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
-                <li><a href="#">Meus livros para doação</a></li>
-                <li><a href="#">Meus livros para troca</a></li>                
+                <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
+                <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>                
                 <div class="dropdown-divider"></div>    
                 <li class="sessao-menu">Comunidade</li>            
                 <li><a href="listar-livros-para-doacao.html">Livros disponíveis para doação</a></li>

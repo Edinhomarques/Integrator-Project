@@ -86,70 +86,42 @@
             <div class="container-fluid">              
               <div class="row">
                 <div class="col-lg-12 topo">                 
-                  <h2>Livros disponíveis para doação</h2>                
+                  <h2>Meus livros para troca</h2>                
                 </div>  
               </div>
               <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
+                <div class="col-lg-3 text-center p-2">                 
                     <img src="./assets/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Carlos</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Carlos" data-local="local para troca"  data-imagem="2.jpg">Quero este livro</button>                                   
+                    <p class="m-1 nome-livro">Vivendo de Propósito</p>
+                    <p class="local">Shopping São Paulo</p>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/editar.svg" alt="" width="20px" class="my-1">
+                    </button>   
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/deletar.svg" alt="" width="20px" class="my-1">
+                    </button>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#trocadoModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/trocar.svg" alt="" width="20px" class="my-1"> Trocado
+                    </button>                                
                 </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
+                <div class="col-lg-3 text-center p-2">  
+                  <div class="col livro-trocado">
+                    <div id="trocado"></div>               
+                    <img src="./assets/img-livros/4.jpg" alt="livro 4" class="img-fluid capa-livro">
+                  </div>  
                   <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="3.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="4.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="5.jpg">Quero este livro</button>                                   
-                </div>
-              </div>
-
-              <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
-                    <img src="./assets/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Usuario</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="6.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="7.jpg">Quero este livro</button>                                 
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="8.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/9.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="9.jpg">Quero este livro</button>                                 
-                </div>
-              </div>
+                    <p class="local">Shopping São Paulo</p>                
+                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/editar.svg" alt="" width="20px" class="my-1">
+                  </button>   
+                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/deletar.svg" alt="" width="20px" class="my-1">
+                  </button>
+                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#recebidoModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/receber.svg" alt="" width="20px" class="my-1"> Recebido
+                  </button>                                     
+                </div>                
+              </div>              
                 
             </div>
           </div>
@@ -237,32 +209,121 @@
     </div>
   </div>
   
-  <div class="modal fade" id="livroModal" tabindex="-1" role="dialog" aria-labelledby="livroModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
+  <!--Modal editar-->
+  <div class="modal fade" id="editarLivroModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="livroModalLabel">Livro para doação</h5>
+        <div class="modal-header">    
+          <h5>Editar livro</h5>      
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="row">
-            <div class="col-12 col-lg-6 text-center">
-              <img src="" alt="livro 1" id="imgLivro" class="img-fluid capa-livro">
-              <p id="livro" class="m-1 nome-livro"></p>                   
-              <p class="m-0" id="usuario"></p>
-              <p id="local"></p> 
-            </div>
-            <div class="col-12 col-lg-6">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="270" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-            <div class="col-6 text-center">
-              <a class="btn btn-primary px-3 my-2" href="#">Entrar em contato com <span id="contato"></span></a>
-            </div>
+          <div class="cadastro-livro">
+            <form>
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img src="./assets/icons/book.png" id="capaLivro" class="rounded  mr-auto d-block img-fluid mb-3" style="max-height: 100px;" alt="Capa livro">
+                  <div class="form-group">
+                    <label for="nomeLivro">Nome do livro</label>
+                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                  </div>
+                  <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                  </div>
+                  <div class="form-group">
+                    <label for="acao">O que deseja fazer?</label>
+                    <select id="acao" class="form-control">
+                      <option>O que deseja fazer?</option>
+                      <option>Doar</option>
+                      <option selected>Trocar</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="localTroca">Local de encontro para troca</label>
+                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-12">
+                  <input class="btn btn-primary px-3 my-2" type="submit" value="Salvar livro">
+                </div>
+              </div>
+              
+              
+            </form>
           </div>
-                 
-        </div>       
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <!--Modal excluir-->
+  <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="excluirModalLabel">Excluir livro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">          
+          <p>Tem certeza que deseja excluir esse livro?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal troca-->
+  <div class="modal fade" id="trocadoModal" tabindex="-1" role="dialog" aria-labelledby="trocadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="trocadoModalLabel">Marcar livro como trocado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <p>Tem certeza que deseja marcar este livro como trocado?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <!--Modal recebido-->
+  <div class="modal fade" id="recebidoModal" tabindex="-1" role="dialog" aria-labelledby="recebidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="recebidoModalLabel">Marcar livro como recebido</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <p>Tem certeza que deseja marcar este livro como recebido?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
       </div>
     </div>
   </div>
@@ -290,10 +351,25 @@
       modal.find('#livro').text(livro)
       modal.find('#usuario').text(usuario)
       modal.find('#contato').text(usuario)
-      modal.find('#local').text(local)
+      modal.find('#localTroca').text(local)
 
+    });
+
+    /*Editar*/
+    $('#editarLivroModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var nomeLivro = button.data('livro') 
+      var imagem = button.data('imagem') 
+      var autor = button.data('autor') 
+      var local = button.data('local') 
+      var modal = $(this)
+      modal.find('#nomeLivro').val(nomeLivro)
+      modal.find('#capaLivro').attr("src", './assets/img-livros/'+imagem)
+      modal.find('#autor').val(autor)
+      modal.find('#localTroca').val(local)
     })
   </script>
+  
 </body>
 
 </html>

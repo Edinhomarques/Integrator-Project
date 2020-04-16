@@ -86,70 +86,42 @@
             <div class="container-fluid">              
               <div class="row">
                 <div class="col-lg-12 topo">                 
-                  <h2>Livros disponíveis para doação</h2>                
+                  <h2>Meus livros para doação</h2>                
                 </div>  
               </div>
               <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
+                <div class="col-lg-3 text-center p-2">                 
                     <img src="./assets/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Carlos</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Carlos" data-local="local para troca"  data-imagem="2.jpg">Quero este livro</button>                                   
+                    <p class="m-1 nome-livro">Vivendo de Propósito</p>
+                    <p class="local">Shopping São Paulo</p>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/editar.svg" alt="editar" width="20px" class="my-1">
+                    </button>   
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/deletar.svg" alt="editar" width="20px" class="my-1">
+                    </button>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                      <img src="./assets/icons/doar.svg" alt="editar" width="20px" class="my-1"> Doar
+                    </button>                                
                 </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
+                <div class="col-lg-3 text-center p-2">  
+                  <div class="col livro-doado">
+                    <div id="doado"></div>               
+                    <img src="./assets/img-livros/4.jpg" alt="livro 4" class="img-fluid capa-livro">
+                  </div>  
                   <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="3.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="4.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="5.jpg">Quero este livro</button>                                   
-                </div>
-              </div>
-
-              <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
-                    <img src="./assets/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Usuario</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="6.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="7.jpg">Quero este livro</button>                                 
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="8.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="./assets/img-livros/9.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="9.jpg">Quero este livro</button>                                 
-                </div>
-              </div>
+                    <p class="local">Shopping São Paulo</p>                
+                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/editar.svg" alt="editar" width="20px" class="my-1">
+                  </button>   
+                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/deletar.svg" alt="editar" width="20px" class="my-1">
+                  </button>
+                  <button type="button" class="btn btn-secondary mx-auto btn-sm" data-toggle="modal" data-target="#desmarcarDoadoModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
+                    <img src="./assets/icons/doar.svg" alt="editar" width="20px" class="my-1"> Doar
+                  </button>                                     
+                </div>                
+              </div>              
                 
             </div>
           </div>
@@ -267,6 +239,125 @@
     </div>
   </div>
 
+  <!--Modal editar-->
+  <div class="modal fade" id="editarLivroModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">    
+          <h5>Editar livro</h5>      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="cadastro-livro">
+            <form>
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img src="./assets/icons/book.png" id="capaLivro" class="rounded  mr-auto d-block img-fluid mb-3" style="max-height: 100px;" alt="Capa livro">
+                  <div class="form-group">
+                    <label for="nomeLivro">Nome do livro</label>
+                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                  </div>
+                  <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                  </div>
+                  <div class="form-group">
+                    <label for="acao">O que deseja fazer?</label>
+                    <select id="acao" class="form-control">
+                      <option>O que deseja fazer?</option>
+                      <option selected>Doar</option>
+                      <option>Trocar</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="localTroca">Local de encontro para troca</label>
+                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-12">
+                  <input class="btn btn-primary px-3 my-2" type="submit" value="Salvar livro">
+                </div>
+              </div>
+              
+              
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <!--Modal excluir-->
+  <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="excluirModalLabel">Excluir livro</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">          
+          <p>Tem certeza que deseja excluir esse livro?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal doado-->
+  <div class="modal fade" id="doadoModal" tabindex="-1" role="dialog" aria-labelledby="doadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="doadoModalLabel">Marcar livro como doado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <p>Tem certeza que deseja marcar este livro como doado?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--Modal desmarcar doado-->
+  <div class="modal fade" id="desmarcarDoadoModal" tabindex="-1" role="dialog" aria-labelledby="desmarcarDoadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">          
+          <h5 class="modal-title" id="desmarcarDoadoModalLabel">Desmarcar livro como doado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <p>Tem certeza que deseja desmarcar este livro como doado?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
 
   </footer>
@@ -291,7 +382,20 @@
       modal.find('#usuario').text(usuario)
       modal.find('#contato').text(usuario)
       modal.find('#local').text(local)
+    })
 
+    /*Editar*/
+    $('#editarLivroModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) 
+      var nomeLivro = button.data('livro') 
+      var imagem = button.data('imagem') 
+      var autor = button.data('autor') 
+      var local = button.data('local') 
+      var modal = $(this)
+      modal.find('#nomeLivro').val(nomeLivro)
+      modal.find('#capaLivro').attr("src", './assets/img-livros/'+imagem)
+      modal.find('#autor').val(autor)
+      modal.find('#localTroca').val(local)
     })
   </script>
 </body>
