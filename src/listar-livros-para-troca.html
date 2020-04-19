@@ -32,17 +32,7 @@
           </div>
         </div>
       </form>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active mx-2 d-none d-lg-block">
-          <a class="nav-link" href="#">
-            <img src="assets/icons/mensagem.svg" width="25px" class="img-fluid mx-auto" />
-          </a>
-        </li>
-        <li class="nav-item mx-2 d-none d-lg-block">
-          <a class="nav-link" href="#">
-            <img src="assets/icons/notificacao.svg" width="25px" class="img-fluid mx-auto" />
-          </a>
-        </li>
+      <ul class="navbar-nav ml-auto">        
         <li class="nav-item dropdown  mx-2 d-none d-lg-block">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -50,23 +40,20 @@
             David Lemos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Editar perfil</a>
-            <a class="dropdown-item" href="#">Sair</a>
+            <a class="dropdown-item" href="perfil.html">Editar perfil</a>
+            <a class="dropdown-item" href="home.html">Sair</a>
           </div>
         </li>
         <li class="d-block d-lg-none">
 
-          <ul class="menu-topo-mobile">
-            <li><a href="#">Livros para troca</a></li>
-            <li><a href="#">Livros para doação</a></li>
-            <li><a href="#">Livros de interesse</a></li>
+          <ul class="menu-topo-mobile pb-3">
+            <li><a href="listar-livros-para-troca.html">Livros para troca</a></li>
+            <li><a href="listar-livros-para-doacao.html">Livros para doação</a></li>
             <div class="dropdown-divider"></div>
-            <li><a href="#">Compartilhar seu livro</a></li>
-            <li><a href="#">Seus livros para troca</a></li>
-            <li><a href="#">Seus livros para doação</a></li>
-            <li><a href="#">Seus livros de interesse</a></li>
-            <li><a href="#">Seus livros emprestados</a></li>
-            <li><a href="#">Chat</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
+            <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>
+            <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
+            <li><a href="perfil.html">Editar perfil</a>
             <li><a href="#">Sair</a></li>
           </ul>
 
@@ -79,18 +66,17 @@
       <div class="row">
         <div class="col-lg-2 d-none d-lg-block position-fixed col-lateral">
           <div class="d-block">
-            <div class="usuario">
-              <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 50px;" />
-              <span class="nome-usuario">David Lemos</span>
-            </div>
-            <div>
-              <ul class="menu-lateral">
-                <li><a href="#">Seus livros para troca</a></li>
-                <li><a href="#">Seus livros para doação</a></li>
-                <li><a href="#">Seus livros de interesse</a></li>
-                <li><a href="#">Seus livros emprestados</a></li>
-              </ul>
-            </div>
+            <ul class="menu-lateral">
+              <li class="sessao-menu">David Lemos</li>  
+              <li><a data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
+              <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
+              <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>                
+              <div class="dropdown-divider"></div>    
+              <li class="sessao-menu">Comunidade</li>            
+              <li><a href="listar-livros-para-doacao.html">Livros disponíveis para doação</a></li>
+              <li><a href="listar-livros-para-troca.html">Livros disponíveis para troca</a></li>
+
+            </ul>
           </div>
 
 
@@ -200,6 +186,57 @@
     </section>
   </main>
 
+  <div class="modal fade" id="compartilharLivroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">    
+          <h5>Cadastrar livro</h5>      
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="cadastro-livro">
+            <form>
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img src="./assets/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
+                  <div class="form-group">
+                    <label for="nomeLivro">Nome do livro</label>
+                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                  </div>
+                  <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                  </div>
+                  <div class="form-group">
+                    <label for="acao">O que deseja fazer?</label>
+                    <select id="acao" class="form-control">
+                      <option selected>O que deseja fazer?</option>
+                      <option>Doar</option>
+                      <option>Emprestar</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="localTroca">Local de encontro para troca</label>
+                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                  </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="col-12">
+                  <input class="btn btn-primary px-3 my-2" type="submit" value="Cadastrar livro">
+                </div>
+              </div>
+              
+              
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
   
   <div class="modal fade" id="livroModal" tabindex="-1" role="dialog" aria-labelledby="livroModalLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
