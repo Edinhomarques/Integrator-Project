@@ -1,66 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/style-logado.css">
-  <link rel="stylesheet" href="./css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
-
-  <title>SwapBook</title>
-</head>
-
-<body>
-  <nav class="navbar  fixed-top navbar-expand-lg navbar-light border-bottom p-2">
-    <a class="navbar-brand ml-4 mr-5" href="/"><img src="./assets/logo.png" alt="Logo SwapBook"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <form class="form-inline my-4 my-lg-0">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
-            aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
-            style="width:  300px; max-width: 100%;">
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">
-              <img src="assets/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
-            </span>
-          </div>
-        </div>
-      </form>
-      <ul class="navbar-nav ml-auto">        
-        <li class="nav-item dropdown  mx-2 d-none d-lg-block">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 30px;" />
-            David Lemos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="perfil.html">Editar perfil</a>
-            <a class="dropdown-item" href="home.html">Sair</a>
-          </div>
-        </li>
-        <li class="d-block d-lg-none">
-
-          <ul class="menu-topo-mobile pb-3">
-            <li><a href="listar-livros-para-troca.html">Livros para troca</a></li>
-            <li><a href="listar-livros-para-doacao.html">Livros para doação</a></li>
-            <div class="dropdown-divider"></div>
-            <li><a href="#" data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
-            <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>
-            <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
-            <li><a href="perfil.html">Editar perfil</a>
-            <li><a href="#">Sair</a></li>
-          </ul>
-
-        </li>
-      </ul>
-    </div>
-  </nav>
+<%- include('./partials/header-logado') %>
   <main>
     <div class="container-fluid">
       <div class="row">
@@ -71,12 +9,12 @@
               <ul class="menu-lateral">
                 <li class="sessao-menu">David Lemos</li>  
                 <li><a data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
-                <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
-                <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>                
+                <li><a href="listar-meus-livros-para-doacao">Meus livros para doação</a></li>
+                <li><a href="listar-meus-livros-para-troca">Meus livros para troca</a></li>                
                 <div class="dropdown-divider"></div>    
                 <li class="sessao-menu">Comunidade</li>            
-                <li><a href="listar-livros-para-doacao.html">Livros disponíveis para doação</a></li>
-                <li><a href="listar-livros-para-troca.html">Livros disponíveis para troca</a></li>
+                <li><a href="listar-livros-para-doacao">Livros disponíveis para doação</a></li>
+                <li><a href="listar-livros-para-troca">Livros disponíveis para troca</a></li>
 
               </ul>
             </div>
@@ -157,7 +95,7 @@
             <form>
               <div class="row">
                 <div class="col-12 col-lg-6">
-                  <img src="./assets/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
+                  <img src="images/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
                   <div class="form-group">
                     <label for="nomeLivro">Nome do livro</label>
                     <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
@@ -205,8 +143,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   
 </body>
-
 </html>

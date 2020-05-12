@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SwapBook</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/blog.css">
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+      <a class="navbar-brand ml-4 mr-5" href="/"><img src="/images/logo.png" alt="Logo SwapBook" ></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quemSomos">Quem somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="comofazerparte">Como fazer parte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato">Contato</a>
+          </li>
+        </ul>
+        <div class="">
+          <button class="btn border border-dark bg-light" data-toggle="modal" data-target="#login">
+            Log in
+          </button>
+          <button class="btn bg-dark text-white" data-toggle="modal" data-target="#registrar" data-whatever="@mdo">
+            Registrar
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Faça seu Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email</label>
+                <input type="email" required class="form-control" id="email" name="email" placeholder="email@email.com">
+              </div>
+              <div class="form-group">
+                <label for="senha" class="col-form-label">Senha</label>
+                <input type="password" required class="form-control" id="senha" name="senha" placeholder="sua senha">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn bg-dark text-white" data-dismiss="modal">Voltar</button>
+            <a href="home-logado">
+              <button type="button" class="btn bg-dark text-white">Entrar</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal para cadastrar uma conta -->
+    <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign up for a free account</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="nome">Nome</label>
+                  <input type="text" required class="form-control" id="nome" placeholder="Seu nome">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="sobrenome">Sobrenome</label>
+                  <input type="text" required class="form-control" id="sobrenome" placeholder="Seu Sobrenome">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="email">Email</label>
+                  <input type="email" required class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="password">Password</label>
+                  <input type="password" required class="form-control" id="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-8">
+                  <label for="rua">Rua</label>
+                  <input type="text" required class="form-control" id="rua" placeholder="Rua">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="numero">Número</label>
+                  <input type="number" required class="form-control" id="numero" placeholder="N° da casa">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" required class="form-control" id="bairro" placeholder="bairro" placeholder="Nome do bairro">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" required class="form-control" id="cidade" placeholder="Nome da cidade">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="estado">Estado</label>
+                  <input type="text" required class="form-control" id="estado" placeholder="Nome do estado">
+                  
+                </div>
+               
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn bg-dark text-white" data-dismiss="modal">Voltar</button>
+                <button type="button" class="btn bg-dark text-white">Cadastrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

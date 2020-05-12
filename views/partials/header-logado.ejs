@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/busca.css">
+  <link rel="stylesheet" href="stylesheets/style-logado.css">
+  <link rel="stylesheet" href="stylesheets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="stylesheets/owl.theme.default.min.css" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
+  <title>SwapBook</title>
+</head>
+
+<body>
+  <nav class="navbar  fixed-top navbar-expand-lg navbar-light border-bottom p-2">
+    <a class="navbar-brand ml-4 mr-5" href="home-logado"><img src="images/logo.png" alt="Logo SwapBook"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <form class="form-inline my-4 my-lg-0">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
+            aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
+            style="width:  300px; max-width: 100%;">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">
+              <img src="images/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
+            </span>
+          </div>
+        </div>
+      </form>
+      <ul class="navbar-nav ml-auto">        
+        <li class="nav-item dropdown  mx-2 d-none d-lg-block">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="images/usuario-avatar.png" class="img-fluid mx-auto" style="width: 30px;" />
+            David Lemos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="perfil">Editar perfil</a>
+            <a class="dropdown-item" href="sair">Sair</a>
+          </div>
+        </li>
+        <li class="d-block d-lg-none">
+
+          <ul class="menu-topo-mobile pb-3">
+            <li><a href="listar-livros-para-troca">Livros para troca</a></li>
+            <li><a href="listar-livros-para-doacao">Livros para doação</a></li>
+            <div class="dropdown-divider"></div>
+            <li><a href="#" data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
+            <li><a href="listar-meus-livros-para-troca">Meus livros para troca</a></li>
+            <li><a href="listar-meus-livros-para-doacao">Meus livros para doação</a></li>
+            <li><a href="perfil">Editar perfil</a>
+            <li><a href="#">Sair</a></li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
+  </nav>
