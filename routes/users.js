@@ -21,7 +21,7 @@ const upload = multer({ storage: storage });
 
 router.post("/registro", userController.store);
 router.post("/atualizar", userController.update);
-router.post("/profile", upload.any(), userController.updateProfile);
+router.post("/profile", upload.any(), userController.updateAvatar);
 router.post("/login", authController.store);
 router.post("/logout", authController.destroy);
 

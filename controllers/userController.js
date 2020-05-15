@@ -69,7 +69,7 @@ const userController = {
 
     return res.render('home', { title: 'Home' });
   },
-  updateProfile: async (req, res) => {
+  updateAvatar: async (req, res) => {
     const [avatar] = req.files;
     const id = req.session.user.id
 
@@ -78,9 +78,11 @@ const userController = {
     },{
       where:{id:id}
     });
-    return res.render('home', { title: 'Home' });
-  }
 
+    req.session.user.avatar = `/images/avatar/${avatar.filename}`
+
+    return res.render('perfil', {usuario: req.session.user, title: 'Perfil' });
+  }
 };
 
 module.exports = userController;
