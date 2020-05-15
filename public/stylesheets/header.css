@@ -55,6 +55,7 @@ a {
   margin: 5px 5px ;
   filter: grayscale(1)
 }
+
 .img-logo:hover{
   filter: grayscale(0);
 }

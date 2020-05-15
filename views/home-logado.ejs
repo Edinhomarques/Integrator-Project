@@ -1,69 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/style-logado.css">
-  <link rel="stylesheet" href="./css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
-  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-
-  <title>SwapBook</title>
-</head>
-
-<body>
-  <nav class="navbar  fixed-top navbar-expand-lg navbar-light border-bottom p-2">
-    <a class="navbar-brand ml-4 mr-5" href="home-logado.html"><img src="./assets/logo.png" alt="Logo SwapBook"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <form class="form-inline my-4 my-lg-0">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
-            aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
-            style="width:  300px; max-width: 100%;">
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">
-              <img src="assets/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
-            </span>
-          </div>
-        </div>
-      </form>
-      <ul class="navbar-nav ml-auto">        
-        <li class="nav-item dropdown  mx-2 d-none d-lg-block">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <img src="assets/usuario-avatar.png" class="img-fluid mx-auto" style="width: 30px;" />
-            David Lemos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="perfil.html">Editar perfil</a>
-            <a class="dropdown-item" href="home.html">Sair</a>
-          </div>
-        </li>
-        <li class="d-block d-lg-none">
-
-          <ul class="menu-topo-mobile pb-3">
-            <li><a href="listar-livros-para-troca.html">Livros para troca</a></li>
-            <li><a href="listar-livros-para-doacao.html">Livros para doação</a></li>
-            <div class="dropdown-divider"></div>
-            <li><a href="#" data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
-            <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>
-            <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
-            <li><a href="perfil.html">Editar perfil</a>
-            <li><a href="#">Sair</a></li>
-          </ul>
-
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
+ <%- include('./partials/header-logado') %>
+ <main>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-2 d-none d-lg-block position-fixed col-lateral">
@@ -71,14 +7,14 @@
             
             <div>
               <ul class="menu-lateral">
-                <li class="sessao-menu">David Lemos</li>  
+                <li class="sessao-menu"><%=usuario.name %></li> 
                 <li><a data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
-                <li><a href="listar-meus-livros-para-doacao.html">Meus livros para doação</a></li>
-                <li><a href="listar-meus-livros-para-troca.html">Meus livros para troca</a></li>                
+                <li><a href="listar-meus-livros-para-doacao">Meus livros para doação</a></li>
+                <li><a href="listar-meus-livros-para-troca">Meus livros para troca</a></li>                
                 <div class="dropdown-divider"></div>    
                 <li class="sessao-menu">Comunidade</li>            
-                <li><a href="listar-livros-para-doacao.html">Livros disponíveis para doação</a></li>
-                <li><a href="listar-livros-para-troca.html">Livros disponíveis para troca</a></li>
+                <li><a href="listar-livros-para-doacao">Livros disponíveis para doação</a></li>
+                <li><a href="listar-livros-para-troca">Livros disponíveis para troca</a></li>
 
               </ul>
             </div>
@@ -113,46 +49,46 @@
               <div class="row">
                 <div class="col-lg-10 topo">
                   <a href="#">
-                    <h2>Livros disponíveis para doação <img src="./assets/icons/chevron-right.svg" width="24px"
+                    <h2>Livros disponíveis para doação <img src="images/icons/chevron-right.svg" width="24px"
                         class="img-fluid d-inline d-lg-none"> </h2>
                   </a>
                 </div>
                 <div class="col-lg-2 d-none d-lg-block topo text-right">
-                  <a href="listar-livros-para-doacao.html">Ver todos <img src="./assets/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
+                  <a href="listar-livros-para-doacao">Ver todos <img src="images/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
                 </div>
 
                 <div class="col-lg-12 pr-0">
                   <div class="owl-carousel owl-theme">
                     <div class="text-center">
-                      <img src="./assets/img-livros/1.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/1.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="1.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="2.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="3.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="4.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
@@ -170,46 +106,46 @@
               <div class="row">
                 <div class="col-lg-10 topo">
                   <a href="#">
-                    <h2>Livros disponíveis para troca <img src="./assets/icons/chevron-right.svg" width="24px"
+                    <h2>Livros disponíveis para troca <img src="images/icons/chevron-right.svg" width="24px"
                         class="img-fluid d-inline d-lg-none"> </h2>
                   </a>
                 </div>
                 <div class="col-lg-2 d-none d-lg-block topo text-right">
-                  <a href="listar-livros-para-troca.html">Ver todos <img src="./assets/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
+                  <a href="listar-livros-para-troca">Ver todos <img src="images/icons/chevron-right.svg" width="16px" class="img-fluid"></a>
                 </div>
 
                 <div class="col-lg-12 pr-0">
                   <div class="owl-carousel owl-theme">
                     <div class="text-center">
-                      <img src="./assets/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="5.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="7.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="8.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
                       <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="6.jpg">Quero este livro</a>
                     </div>
                     <div class="text-center">
-                      <img src="./assets/img-livros/10.jpg" alt="livro 1" class="img-fluid capa-livro">
+                      <img src="images/img-livros/10.jpg" alt="livro 1" class="img-fluid capa-livro">
                       <p class="m-1 nome-livro">Nome do livro</p>
                       <p class="m-0 usuario">por Usuario</p>
                       <p class="local">local</p>
@@ -244,7 +180,7 @@
             <form>
               <div class="row">
                 <div class="col-12 col-lg-6">
-                  <img src="./assets/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
+                  <img src="images/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
                   <div class="form-group">
                     <label for="nomeLivro">Nome do livro</label>
                     <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
@@ -322,7 +258,7 @@
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
-  <script src="./js/owl.carousel.min.js"></script>
+  <script src="javascripts/owl.carousel.min.js"></script>
   <script>
     $('.owl-carousel').owlCarousel({
       loop: true,
@@ -351,7 +287,7 @@
       var usuario = button.data('usuario') 
       var local = button.data('local') 
       var modal = $(this)
-      modal.find('#imgLivro').attr("src",'./assets/img-livros/'+imagem)
+      modal.find('#imgLivro').attr("src",'images/img-livros/'+imagem)
       modal.find('#livro').text(livro)
       modal.find('#usuario').text(usuario)
       modal.find('#contato').text(usuario)
