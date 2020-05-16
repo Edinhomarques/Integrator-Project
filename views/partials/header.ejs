@@ -38,8 +38,8 @@
           <li class="nav-item dropdown  mx-2 d-none d-lg-block">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <img src="<%= usuario.avatar%>" class="img-fluid mx-auto" style="width: 30px;" />
-              <%=usuario.name%>
+              <img src="<%= usuario.user.avatar%>" class="img-fluid mx-auto" style="width: 30px;" />
+              <%= `${usuario.user.first_name} ${usuario.user.last_name}` %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="home-logado">Compartilhe Livros</a>
@@ -80,8 +80,8 @@
               <div class="form-group">
                 <label for="senha" class="col-form-label" >Senha</label>
                 <input type="password" required class="form-control" id="senha" name="password" placeholder="sua senha">
-                <% if( typeof msg !== 'undefined') {%>
-                  <h4 class="pt-3"><%= msg %></h4>
+                <% if( typeof msgLogin !== 'undefined') {%>
+                  <h4 class="pt-3"><%= msgLogin %></h4>
                 <% } %>
               </div>
           </div>
@@ -148,6 +148,9 @@
                   <label for="estado">Estado</label>
                   <input type="text" required class="form-control" id="estado" name="uf" placeholder="Nome do estado">
                 </div>
+                <% if( typeof msgRegistro !== 'undefined') {%>
+                  <h4 class="pt-3"><%= msgRegistro %></h4>
+                <% } %>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn bg-dark text-white" data-dismiss="modal">Voltar</button>

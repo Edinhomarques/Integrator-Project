@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Contato } = require("../models");
 const bcrypt = require("bcrypt");
 
 const authController = {
@@ -11,20 +11,25 @@ const authController = {
       }
     });
 
+    const usuarioContato = await Contato.findOne({
+      where:{
+        users_id: usuario.dataValues.id,
+      }
+    });
+
     if (!usuario || !bcrypt.compareSync(password, usuario.dataValues.password)) {
       res.render("home", {
-        msg: "Email ou senha errados!",
+        msgLogin: "Email ou senha errados!",
         title: 'Home'
       });
     }else {
-      const nameUsuario = `${usuario.dataValues.first_name} ${usuario.dataValues.last_name}`
-      
+
     req.session.user = {
-      id: usuario.dataValues.id,
-      name: nameUsuario ,
-      email: usuario.dataValues.email,
-      avatar:usuario.dataValues.avatar
+      user: usuario.dataValues,
+      userContato: usuarioContato.dataValues
     };
+
+    console.log(req.session.user)
 
     res.render('home-logado', { usuario: req.session.user, title: 'Home'});
     }

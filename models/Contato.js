@@ -27,6 +27,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
+  Contato.associate = (models) => {
+    Contato.belongsTo(models.User, {
+      foreignKey: "users_id",
+      as: "user",
+    });
+  }
   
     return Contato;
 };

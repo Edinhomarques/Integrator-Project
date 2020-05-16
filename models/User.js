@@ -7,14 +7,23 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      first_name:DataTypes.STRING,
-      last_name: DataTypes.STRING,
+      first_name:{
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      last_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       avatar: DataTypes.STRING,
       email: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      password: DataTypes.STRING,
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       createdAt:DataTypes.DATE,
       updatedAt:DataTypes.DATE,
     },
@@ -22,7 +31,5 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
-
-
   return User;
 };
