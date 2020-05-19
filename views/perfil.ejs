@@ -47,45 +47,45 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
-                <input type="text" required class="form-control" id="nome" placeholder="Seu nome" value="<%= usuario.user.first_name%>">
+                <input type="text" required class="form-control" name="nome" id="nome" placeholder="Seu nome" value="<%= usuario.user.first_name%>">
               </div>
               <div class="form-group col-md-6">
                 <label for="sobrenome">Sobrenome</label>
-                <input type="text" required class="form-control" id="sobrenome" placeholder="Seu Sobrenome" value="<%= usuario.user.last_name%>">
+                <input type="text" required class="form-control" name="sobrenome" id="sobrenome" placeholder="Seu Sobrenome" value="<%= usuario.user.last_name%>">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="email" required class="form-control" id="email" placeholder="Seu email"value="<%= usuario.user.email%>">
+                <input type="email" required class="form-control" name="email" id="email" placeholder="Seu email"value="<%= usuario.user.email%>">
               </div>
               <div class="form-group col-md-6">
                 <label for="password">Password</label>
-                <input type="password" required class="form-control" id="password" placeholder="Digite uma nova senha para alterar">
+                <input type="password" required class="form-control" name ="password" id="password" placeholder="Digite uma nova senha para alterar">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-8">
                 <label for="rua">Rua</label>
-                <input type="text" required class="form-control" id="rua" placeholder="Rua"  value="<%= usuario.userContato.rua%>">
+                <input type="text" required class="form-control" name="rua" id="rua" placeholder="Rua"  value="<%= usuario.userContato.rua%>">
               </div>
               <div class="form-group col-md-4">
                 <label for="numero">Número</label>
-                <input type="number" required class="form-control" id="numero" placeholder="N° da casa"  value="<%= usuario.userContato.numero%>">
+                <input type="number" required class="form-control" name="numero" id="numero" placeholder="N° da casa"  value="<%= usuario.userContato.numero%>">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-5">
                 <label for="bairro">Bairro</label>
-                <input type="text" required class="form-control" id="bairro" placeholder="bairro" placeholder="Nome do bairro"  value="<%= usuario.userContato.numero%>">
+                <input type="text" required class="form-control" name="bairro" id="bairro" placeholder="bairro" placeholder="Nome do bairro"  value="<%= usuario.userContato.numero%>">
               </div>            
               <div class="form-group col-md-5">
                 <label for="cidade">Cidade</label>
-                <input type="text" required class="form-control" id="cidade" placeholder="Nome da cidade"  value="<%= usuario.userContato.cidade%>">
+                <input type="text" required class="form-control" name="cidade" id="cidade" placeholder="Nome da cidade"  value="<%= usuario.userContato.cidade%>">
               </div>
               <div class="form-group col-md-2">
                 <label for="estado">Estado</label>
-                <input type="text" required class="form-control" id="estado" placeholder="Nome do estado"  value="<%= usuario.userContato.uf%>">
+                <input type="text" required class="form-control" name="uf" id="estado" placeholder="Nome do estado"  value="<%= usuario.userContato.uf%>">
               </div>
              
             </div>            

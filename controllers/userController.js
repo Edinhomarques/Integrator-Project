@@ -59,7 +59,7 @@ const userController = {
       where:{id:id}
     });
 
-    const updateUserContato = await Contato.create({
+    const updateUserContato = await Contato.update({
       rua:rua,
       numero: numero,
       bairro: bairro,

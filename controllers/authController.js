@@ -29,8 +29,6 @@ const authController = {
       userContato: usuarioContato.dataValues
     };
 
-    console.log(req.session.user)
-
     res.render('home-logado', { usuario: req.session.user, title: 'Home'});
     }
   },
