@@ -5,7 +5,7 @@
         <div class="col-lg-2 d-none d-lg-block position-fixed col-lateral">
           <div class="d-block">
             <ul class="menu-lateral">
-              <li class="sessao-menu"><%= `${usuario.user.first_name} ${usuario.user.last_name}` %></li>   
+              <li class="sessao-menu"><%= `${usuario.first_name} ${usuario.last_name}` %></li>   
               <li><a data-toggle="modal" data-target="#compartilharLivroModal" href="#">Compartilhar meu livro</a></li>
               <li><a href="listar-meus-livros-para-doacao">Meus livros para doação</a></li>
               <li><a href="listar-meus-livros-para-troca">Meus livros para troca</a></li>                
@@ -28,37 +28,24 @@
                 </div>  
               </div>
               <div class="row py-5">
-                <div class="col-lg-3 text-center p-2">                 
-                    <img src="images/img-livros/2.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Vivendo de Propósito</p>
-                    <p class="local">Shopping São Paulo</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
+                <%  books.map(book => { %>
+                  <div class="col-lg-3 text-center p-2">                 
+                    <img src=<%= `images/img-livros/${book.photo}`%> alt="livro 1" class="img-fluid capa-livro">
+                    <p class="m-1 nome-livro"><%= book.id %></p>
+                    <p class="m-1 nome-livro"><%= book.titulo %></p>
+                    <p class="local"> <%= book.localizacao %></p>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-id="<%= book.id %>" data-livro="<%= book.titulo %>" data-autor="<%= book.autor %>" data-local="<%= book.localizacao %>" data-imagem=<%=book.photo%> >
                       <img src="images/icons/editar.svg" alt="editar" width="20px" class="my-1">
                     </button>   
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
-                      <img src="images/icons/deletar.svg" alt="editar" width="20px" class="my-1">
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %> data-imagem="2.jpg">
+                      <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
                     </button>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livro="Vivendo de Propósito" data-autor="Arnaldo Neto" data-local="Shopping São Paulo"  data-imagem="2.jpg">
-                      <img src="images/icons/doar.svg" alt="editar" width="20px" class="my-1"> Doar
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
+                      <img src="images/icons/doar.svg" alt="doarButton" width="20px" class="my-1"> Doar
                     </button>                                
-                </div>
-                <div class="col-lg-3 text-center p-2">  
-                  <div class="col livro-doado">
-                    <div id="doado"></div>               
-                    <img src="images/img-livros/4.jpg" alt="livro 4" class="img-fluid capa-livro">
-                  </div>  
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="local">Shopping São Paulo</p>                
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
-                    <img src="images/icons/editar.svg" alt="editar" width="20px" class="my-1">
-                  </button>   
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#excluirModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
-                    <img src="images/icons/deletar.svg" alt="editar" width="20px" class="my-1">
-                  </button>
-                  <button type="button" class="btn btn-secondary mx-auto btn-sm" data-toggle="modal" data-target="#desmarcarDoadoModal" data-livro="Demolidor" data-autor="Mark Waid" data-local="Shopping São Paulo"  data-imagem="4.jpg">
-                    <img src="images/icons/doar.svg" alt="editar" width="20px" class="my-1"> Doar
-                  </button>                                     
-                </div>                
+                  </div>
+                <% }) %>
+                         
               </div>              
                 
             </div>
@@ -106,29 +93,29 @@
         </div>
         <div class="modal-body">
           <div class="cadastro-livro">
-            <form>
+            <form action="/book" method="POST" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-12 col-lg-6">
                   <img src="images/icons/book.png" class="rounded  mr-auto d-block img-fluid mb-3" width="100" alt="Capa livro">
+                  <input type="file" name="photo" id="photo">
                   <div class="form-group">
-                    <label for="nomeLivro">Nome do livro</label>
-                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                    <label for="titulo">Nome do livro</label>
+                    <input type="text" class="form-control" name="titulo" id="nomeLivro" placeholder="Nome do livro">
                   </div>
                   <div class="form-group">
                     <label for="autor">Autor</label>
-                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                    <input type="text" class="form-control" name='autor' id="autor" required placeholder="Autor">
                   </div>
                   <div class="form-group">
                     <label for="acao">O que deseja fazer?</label>
-                    <select id="acao" class="form-control">
-                      <option selected>O que deseja fazer?</option>
-                      <option>Doar</option>
-                      <option>Emprestar</option>
+                    <select id="acao" name="disponibilidade" class="form-control">
+                      <option selected value="doar">Doar</option>
+                      <option value="emprestar">Emprestar</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="localTroca">Local de encontro para troca</label>
-                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                    <input type="text" class="form-control" name="localizacao" id="localTroca" placeholder="Local de encontro para troca">
                   </div>
                 </div>
                 <div class="col-12 col-lg-6">
@@ -189,36 +176,37 @@
         </div>
         <div class="modal-body">
           <div class="cadastro-livro">
-            <form>
+            <form action="/listar-meus-livros-para-doacao" method="POST">
               <div class="row">
                 <div class="col-12 col-lg-6">
-                  <img src="images/icons/book.png" id="capaLivro" class="rounded  mr-auto d-block img-fluid mb-3" style="max-height: 100px;" alt="Capa livro">
+                  <!-- <img src="" alt="livro 1" id="imgLivro" class="img-fluid capa-livro"> -->
+                  <!-- <input type="file" name="photo" id="photo"> -->
+                  <input type="text" name="idBook" id="idBook" hidden>
                   <div class="form-group">
-                    <label for="nomeLivro">Nome do livro</label>
-                    <input type="text" class="form-control" id="nomeLivro" placeholder="Nome do livro">
+                    <label for="titulo">Nome do livro</label>
+                    <input type="text" class="form-control" name="titulo" id="nomeLivro" placeholder="Nome do livro">
                   </div>
                   <div class="form-group">
                     <label for="autor">Autor</label>
-                    <input type="text" class="form-control" id="autor" placeholder="Autor">
+                    <input type="text" class="form-control" name='autor' id="autor" required placeholder="Autor">
                   </div>
                   <div class="form-group">
                     <label for="acao">O que deseja fazer?</label>
-                    <select id="acao" class="form-control">
-                      <option>O que deseja fazer?</option>
-                      <option selected>Doar</option>
-                      <option>Trocar</option>
+                    <select id="acao" name="disponibilidade" class="form-control">
+                      <option selected value="doar">Doar</option>
+                      <option value="emprestar">Emprestar</option>
                     </select>
                   </div>
                   <div class="form-group">
                     <label for="localTroca">Local de encontro para troca</label>
-                    <input type="text" class="form-control" id="localTroca" placeholder="Local de encontro para troca">
+                    <input type="text" class="form-control" name="localizacao" id="localTroca" placeholder="Local de encontro para troca">
                   </div>
                 </div>
                 <div class="col-12 col-lg-6">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="320" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="col-12">
-                  <input class="btn btn-primary px-3 my-2" type="submit" value="Salvar livro">
+                  <input class="btn btn-primary px-3 my-2" type="submit" value="Editar livro">
                 </div>
               </div>
               
@@ -307,13 +295,15 @@
     crossorigin="anonymous"></script>
   <script src="./bootstrap/js/bootstrap.min.js"></script>
   <script src="javascript/owl.carousel.min.js"></script>
+
   <script>
     $('#livroModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) // Button that triggered the modal
       var imagem = button.data('imagem')
       var livro = button.data('livro') 
       var usuario = button.data('usuario') 
-      var local = button.data('local') 
+      var local = button.data('local')
+      
       var modal = $(this)
       modal.find('#imgLivro').attr("src",'images/img-livros/'+imagem)
       modal.find('#livro').text(livro)
@@ -325,13 +315,16 @@
     /*Editar*/
     $('#editarLivroModal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget) 
+      var id = button.data('id') 
       var nomeLivro = button.data('livro') 
       var imagem = button.data('imagem') 
       var autor = button.data('autor') 
       var local = button.data('local') 
       var modal = $(this)
+
+      modal.find('#idBook').val(id)
       modal.find('#nomeLivro').val(nomeLivro)
-      modal.find('#capaLivro').attr("src", 'images/img-livros/'+imagem)
+      modal.find('#capaLivro').attr("src", `images/img-livros/${imagem}`)
       modal.find('#autor').val(autor)
       modal.find('#localTroca').val(local)
     })
