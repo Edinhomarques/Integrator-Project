@@ -7,7 +7,7 @@
             
             <div>
               <ul class="menu-lateral">
-                <li class="sessao-menu"><%= `${usuario.user.first_name} ${usuario.user.last_name}` %></li>  
+                <li class="sessao-menu"><%= `${usuario.first_name} ${usuario.last_name}` %></li>  
                 <li><a data-toggle="modal" data-target="#compartilharLivroModal">Compartilhar meu livro</a></li>
                 <li><a href="listar-meus-livros-para-doacao">Meus livros para doação</a></li>
                 <li><a href="listar-meus-livros-para-troca">Meus livros para troca</a></li>                
@@ -23,7 +23,7 @@
           <h2 class="mb-1">Editar perfil</h2>
           <a data-toggle="modal" data-target="#exampleModal" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" href="#">
-            <img src="<%= usuario.user.avatar%>" class="img-fluid mx-auto mb-1" style="width: 100px;" />
+            <img src="<%= usuario.avatar%>" class="img-fluid mx-auto mb-1" style="width: 100px;" />
           </a>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -47,17 +47,17 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome</label>
-                <input type="text" required class="form-control" name="nome" id="nome" placeholder="Seu nome" value="<%= usuario.user.first_name%>">
+                <input type="text" required class="form-control" name="nome" id="nome" placeholder="Seu nome" value="<%= usuario.first_name%>">
               </div>
               <div class="form-group col-md-6">
                 <label for="sobrenome">Sobrenome</label>
-                <input type="text" required class="form-control" name="sobrenome" id="sobrenome" placeholder="Seu Sobrenome" value="<%= usuario.user.last_name%>">
+                <input type="text" required class="form-control" name="sobrenome" id="sobrenome" placeholder="Seu Sobrenome" value="<%= usuario.last_name%>">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
-                <input type="email" required class="form-control" name="email" id="email" placeholder="Seu email"value="<%= usuario.user.email%>">
+                <input type="email" required class="form-control" name="email" id="email" placeholder="Seu email" value="<%= usuario.email%>">
               </div>
               <div class="form-group col-md-6">
                 <label for="password">Password</label>

@@ -65,7 +65,7 @@ body{
 
 
 .header-home-logado-imagem{
-    background: url(../assets/bg-header-home-logado.png) no-repeat right top;
+    background: url(../images/bg-header-home-logado.png) no-repeat right top;
     background-size: contain;
     height: 400px;
 }
