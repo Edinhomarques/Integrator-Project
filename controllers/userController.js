@@ -44,10 +44,11 @@ const userController = {
         })
       }
   },
+
   update: async (req, res) => {
     const { nome, sobrenome, email, password, rua, numero, bairro, cidade, uf} = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
-    const id = req.session.user.user.id
+    const id = req.session.user.id
 
     const updateUser = await User.update({
       first_name: nome,
@@ -73,9 +74,10 @@ const userController = {
 
     return res.render('home', { title: 'Home' });
   },
+
   updateAvatar: async (req, res) => {
     const [avatar] = req.files;
-    const id = req.session.user.user.id
+    const id = req.session.user.id
 
     const updateUserAvatar = await User.update({
       avatar: `/images/avatar/${avatar.filename}`,
@@ -83,7 +85,6 @@ const userController = {
       where:{id:id}
     });
 
-    req.session.user.user.avatar = `/images/avatar/${avatar.filename}`
     return res.render('perfil', {usuario: req.session.user, title: 'Perfil' });
   }
 };
