@@ -3,14 +3,15 @@ const bcrypt = require("bcrypt");
 
 const userController = {
   store: async (req, res) => {
-    const { nome, sobrenome, email, password, rua, numero, bairro, cidade, uf, cep } = req.body;
+    const { nome, sobrenome, phoneNumber, email, password, rua, numero, bairro, cidade, uf, cep } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
-
+    console.log(phoneNumber)
     try{
       const newUser = await User.create({
         first_name: nome,
         last_name: sobrenome,
         email: email,
+        phoneNumber,
         password: hashPassword,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -24,7 +25,7 @@ const userController = {
           }
         });
         
-        const newUserContato = await Contato.create({
+        await Contato.create({
           rua:rua,
           numero: numero,
           bairro: bairro,
@@ -46,21 +47,22 @@ const userController = {
   },
 
   update: async (req, res) => {
-    const { nome, sobrenome, email, password, rua, numero, bairro, cidade, uf} = req.body;
+    const { nome, sobrenome, email, phoneNumber, password, rua, numero, bairro, cidade, uf} = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
     const id = req.session.user.id
 
-    const updateUser = await User.update({
+    await User.update({
       first_name: nome,
       last_name: sobrenome,
       email: email,
+      phoneNumber,
       password: hashPassword,
       updatedAt: new Date(),
     },{
       where:{id:id}
     });
 
-    const updateUserContato = await Contato.update({
+    await Contato.update({
       rua:rua,
       numero: numero,
       bairro: bairro,

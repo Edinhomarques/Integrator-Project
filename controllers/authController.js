@@ -1,4 +1,5 @@
-const { User, Contato } = require("../models");
+const { User, Contato, Livro } = require("../models");
+const { Op } = require('sequelize')
 const bcrypt = require("bcrypt");
 
 const authController = {
@@ -23,17 +24,27 @@ const authController = {
         title: 'Home'
       });
     }else {
-
-    req.session.user = {
-      id: usuario.dataValues.id,
-      email: usuario.dataValues.email,
-      first_name:usuario.dataValues.first_name,
-      last_name: usuario.dataValues.last_name,
-      avatar: usuario.dataValues.avatar,
-      userContato: usuarioContato.dataValues
-    };
-    console.log(usuario)
-    res.render('home-logado', { usuario: req.session.user, title: 'Home'});
+      req.session.user = {
+        id: usuario.dataValues.id,
+        email: usuario.dataValues.email,
+        first_name:usuario.dataValues.first_name,
+        last_name: usuario.dataValues.last_name,
+        avatar: usuario.dataValues.avatar,
+        userContato: usuarioContato.dataValues
+      };
+      const books = await Livro.findAll({
+        where: {
+          users_id: {
+            [Op.ne]: req.session.user.id
+          }
+        },
+        include: ['user']
+      })
+      books.map(book => console.log(book.user.first_name))
+      const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
+      const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 
+      
+      res.render('home-logado', { usuario: req.session.user, title: 'Home', booksForDonation, booksForSwap});
     }
   },
 
