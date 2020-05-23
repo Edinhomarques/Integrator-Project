@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { Op } = require('sequelize')
+const { Livro } = require("../models");
+
 const auth = require("../middlewares/auth");
 
 /* GET home page. */
@@ -19,21 +22,24 @@ router.get('/contato', function(req, res, next) {
   res.render('contato', { title: 'Blog', usuario:req.session.user});
 });
 
-router.get('/home-logado', auth,  function(req, res, next) {
-  res.render('home-logado', { title: 'Home', usuario:req.session.user});
+router.get('/home-logado', auth,  async function(req, res, next) {
+  const books = await Livro.findAll({
+    where: {
+      users_id: {
+        [Op.ne]: req.session.user.id
+      }
+    },
+    include: ['user']
+  })
+  books.map(book => console.log(book.user.first_name))
+  const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
+  const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 
+  res.render('home-logado', { title: 'Home', usuario:req.session.user, booksForDonation, booksForSwap});
 });
-router.get('/listar-livros-para-doacao', auth,  function(req, res, next) {
-  res.render('listar-livros-para-doacao', { title: 'Listar Livros para doação ', usuario:req.session.user});
-});
-router.get('/listar-livros-para-troca', auth, function(req, res, next) {
-  res.render('listar-livros-para-troca', { title: 'Listar Livros para troca' , usuario:req.session.user});
-});
-router.get('/listar-meus-livros-para-doacao', auth, function(req, res, next) {
-  res.render('listar-meus-livros-para-doacao', { title: 'Meus Livros para troca' , usuario:req.session.user});
-});
-router.get('/listar-meus-livros-para-troca', auth, function(req, res, next) {
-  res.render('listar-meus-livros-para-troca', { title: 'Meus Livros para doação' , usuario:req.session.user});
-});
+
+// router.get('/listar-meus-livros-para-troca', auth, function(req, res, next) {
+//   res.render('listar-meus-livros-para-troca', { title: 'Meus Livros para doação' , usuario:req.session.user});
+// });
 router.get('/perfil', auth, function(req, res, next) {
   res.render('perfil', { title: 'Perfil' , usuario:req.session.user});
 });
