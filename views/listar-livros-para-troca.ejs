@@ -29,65 +29,15 @@
                 </div>  
               </div>
               <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
-                    <img src="images/img-livros/10.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Carlos</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Carlos" data-local="local para troca"  data-imagem="10.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/9.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="9.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/8.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="8.jpg">Quero este livro</button>                                   
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/7.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="7.jpg">Quero este livro</button>                                   
-                </div>
-              </div>
-
-              <div class="row py-5">
-                <div class="col-lg-3 text-center">                 
-                    <img src="images/img-livros/6.jpg" alt="livro 1" class="img-fluid capa-livro">
-                    <p class="m-1 nome-livro">Nome do livro</p>
-                    <p class="m-0 usuario">por Usuario</p>
-                    <p class="local">local</p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="6.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/5.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca"  data-imagem="5.jpg">Quero este livro</button>                                 
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/4.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="4.jpg">Quero este livro</button>                                  
-                </div>
-                <div class="col-lg-3 text-center">                 
-                  <img src="images/img-livros/3.jpg" alt="livro 1" class="img-fluid capa-livro">
-                  <p class="m-1 nome-livro">Nome do livro</p>
-                  <p class="m-0 usuario">por Usuario</p>
-                  <p class="local">local</p>
-                  <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="Nome do livro" data-usuario="Nome do usuário" data-local="local para troca" data-imagem="3.jpg">Quero este livro</button>                                 
-                </div>
+                <% booksForSwap.map(book => { %> 
+                  <div class="col-lg-3 text-center">
+                    <img src="images/img-livros/<%= book.photo %>" alt="livro 1" class="img-fluid capa-livro">
+                    <p class="m-1 nome-livro"><%= book.name %></p>
+                    <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
+                    <p class="local"><%= book.localizacao %></p>
+                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-number="<%= book.user.phoneNumber %>" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                  </div>
+                <% }) %> 
               </div>
                 
             </div>
@@ -197,7 +147,7 @@
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3657.164465543781!2d-46.657037035543055!3d-23.562535967519576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2sus!4v1586352420780!5m2!1spt-PT!2sus" width="100%" height="270" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
             <div class="col-6 text-center">
-              <a class="btn btn-primary px-3 my-2" href="#">Entrar em contato com <span id="contato"></span></a>
+              <a class="btn btn-primary px-3 my-2" id="whatsApp" target="_blank" href="#">Entrar em contato com <span id="contato"></span></a>
             </div>
           </div>
                  
@@ -219,13 +169,16 @@
   <script src="javascript/owl.carousel.min.js"></script>
   <script>
     $('#livroModal').on('show.bs.modal', function (event) {
-      var button = $(event.relatedTarget) // Button that triggered the modal
-      var imagem = button.data('imagem')
-      var livro = button.data('livro') 
-      var usuario = button.data('usuario') 
-      var local = button.data('local') 
+      let button = $(event.relatedTarget) // Button that triggered the modal
+      let imagem = button.data('imagem')
+      let livro = button.data('livro') 
+      let usuario = button.data('usuario') 
+      let local = button.data('local') 
+      let phone = button.data('number') 
+
       var modal = $(this)
       modal.find('#imgLivro').attr("src",'images/img-livros/'+imagem)
+      modal.find('#whatsApp').attr('href', 'https://wa.me/55'+phone)
       modal.find('#livro').text(livro)
       modal.find('#usuario').text(usuario)
       modal.find('#contato').text(usuario)
