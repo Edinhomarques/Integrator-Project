@@ -48,7 +48,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-lg-10 topo">
-                  <a href="#">
+                  <a href="listar-livros-para-doacao">
                     <h2>Livros disponíveis para doação <img src="images/icons/chevron-right.svg" width="24px"
                         class="img-fluid d-inline d-lg-none"> </h2>
                   </a>
@@ -58,19 +58,26 @@
                 </div>
 
                 <div class="col-lg-12 pr-0">
-                  <div class="owl-carousel owl-theme">
-                    <% booksForDonation.map(book => { %>
-                      <div class="text-center">
-                        <p><%= booksForDonation.length %> </p>
-                        <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
-                        <p class="m-1 nome-livro"><%= book.titulo %></p>
-                        <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
-                        <p class="local"><%= book.localizacao %></p>
-                        <a href="#" class="btn btn-primary mx-auto btn-sm py-2" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</a>
+                  <% 
+                    if(booksForSwap.length > 0){ %>
+                      <div class="owl-carousel owl-carousel-booksForDonation owl-theme">                    
+                        <% booksForDonation.map(book => { %>
+                          <div class="text-center">
+                            <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
+                            <p class="m-1 nome-livro"><%= book.titulo %></p>
+                            <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
+                            <p class="local"><%= book.localizacao %></p>
+                            <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>"">Quero este livro</a>
+                          </div>                        
+                        <% })%>
+                      </div>    
+                  <% 
+                    }else{ %>
+                      <div class="text-center m-4">
+                        <p>Ainda não há livros para doação.</p>
                       </div>
-                    <% }) %> 
-                   
-                </div>
+                  <%} %>
+                </div>                  
               </div>
             </div>
           </div>
@@ -79,7 +86,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-lg-10 topo">
-                  <a href="#">
+                  <a href="listar-livros-para-troca">
                     <h2>Livros disponíveis para troca <img src="images/icons/chevron-right.svg" width="24px"
                         class="img-fluid d-inline d-lg-none"> </h2>
                   </a>
@@ -89,20 +96,25 @@
                 </div>
 
                 <div class="col-lg-12 pr-0">
-                  <div class="owl-carousel owl-grab">
-                    <% booksForSwap.map(book => { %>
-                      <div class="text-center">
-                        <p><%= booksForSwap.length %> </p>
-                        <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
-                        <p class="m-1 nome-livro"><%= book.titulo %></p>
-                        <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
-                        <p class="local"><%= book.localizacao %></p>
-                        <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>"">Quero este livro</a>
+                  <% 
+                    if(booksForSwap.length > 0){ %>
+                      <div class="owl-carousel owl-carousel-booksForSwap owl-grab">                    
+                        <% booksForSwap.map(book => { %>
+                          <div class="text-center">
+                            <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
+                            <p class="m-1 nome-livro"><%= book.titulo %></p>
+                            <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
+                            <p class="local"><%= book.localizacao %></p>
+                            <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>"">Quero este livro</a>
+                          </div>                        
+                        <% })%>
+                      </div>    
+                  <% 
+                    }else{ %>
+                      <div class="text-center m-4">
+                        <p>Ainda não há livros pra empréstimo.</p>
                       </div>
-                    <% }) %>
-
-                    
-                  </div>
+                  <%} %>
 
                 </div>
               </div>
@@ -211,21 +223,43 @@
   <script src="./bootstrap/js/bootstrap.min.js"></script>
   <script src="javascripts/owl.carousel.min.js"></script>
   <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
+    $('.owl-carousel-booksForDonation').owlCarousel({
+      loop: false,
       margin: 10,
       responsiveClass: false,
       nav: false,
       responsive: {
         0: {
-          items: 1.5,
-
+          items: 1.5,         
+          <%= booksForDonation.length > 1 ? 'loop: true,' : 'loop: false,' %>
         },
         600: {
           items: 2.5,
+          <%= booksForDonation.length > 2 ? 'loop: true,' : 'loop: false,' %>
         },
         1000: {
           items: 4.5,
+          <%= booksForDonation.length > 4 ? 'loop: true,' : 'loop: false,' %>
+        }
+      }
+    })
+    $('.owl-carousel-booksForSwap').owlCarousel({
+      loop: false,
+      margin: 10,
+      responsiveClass: false,
+      nav: false,
+      responsive: {
+        0: {
+          items: 1.5,         
+          <%= booksForSwap.length > 1 ? 'loop: true,' : 'loop: false,' %>
+        },
+        600: {
+          items: 2.5,
+          <%= booksForSwap.length > 2 ? 'loop: true,' : 'loop: false,' %>
+        },
+        1000: {
+          items: 4.5,
+          <%= booksForSwap.length > 4 ? 'loop: true,' : 'loop: false,' %>
         }
       }
     })

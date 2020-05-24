@@ -88,6 +88,7 @@ module.exports = {
           [Op.ne]: req.session.user.id
         }
       },
+      limit: 6,
       include: ['user']
     })
     const booksForSwap = books.filter(book => book.disponibilidade != 'doar')
