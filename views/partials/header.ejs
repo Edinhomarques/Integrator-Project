@@ -81,7 +81,7 @@
                 <label for="senha" class="col-form-label" >Senha</label>
                 <input type="password" required class="form-control" id="senha" name="password" placeholder="sua senha">
                 <% if( typeof msgLogin !== 'undefined') {%>
-                  <h4 class="pt-3"><%= msgLogin %></h4>
+                  <h5 class="pt-3 text-center text-danger"><%= msgLogin %></h5>
                 <% } %>
               </div>
           </div>
@@ -155,7 +155,7 @@
                   <input type="text" required class="form-control" id="estado" name="uf" placeholder="Nome do estado">
                 </div>
                 <% if( typeof msgRegistro !== 'undefined') {%>
-                  <h4 class="pt-3"><%= msgRegistro %></h4>
+                  <h5 class="pt-3 text-center text-danger"><%= msgRegistro %></h5>
                 <% } %>
               </div>
               <div class="modal-footer">
