@@ -22,14 +22,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <form class="form-inline my-4 my-lg-0">
+      <form action="/busca" method="post" class="form-inline my-4 my-lg-0">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Procurar livros, locais de troca..."
+          <input type="text" class="form-control" name="titulo" placeholder="Procurar livros, locais de troca..."
             aria-label="Procurar livros, locais de troca..." aria-describedby="basic-addon2"
             style="width:  300px; max-width: 100%;">
           <div class="input-group-append">
             <span class="input-group-text" id="basic-addon2">
-              <img src="images/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
+              <button class="btn">
+                <img src="images/icons/pesquisar.svg" width="20px" class="img-fluid mx-auto">
+              </button>
             </span>
           </div>
         </div>

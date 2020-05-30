@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 
-
+.input-group-text > .btn{
+    padding: 0 ;
+    margin: 0;
+}
 
 /* configuracao caixa do livro */
 

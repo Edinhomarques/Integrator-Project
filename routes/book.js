@@ -24,6 +24,9 @@ const uploaBook = multer({ storage: storageBook });
 
 router.post("/book", uploaBook.any(), bookController.create )
 
+router.post("/busca", uploaBook.any(), bookController.listAll )
+
+
 /**Meus Livros para doacao */
 router.get('/listar-meus-livros-para-doacao', auth, myBookDonationController.listBookForDonation)
 router.post("/listar-meus-livros-para-doacao", myBookDonationController.updateBook )

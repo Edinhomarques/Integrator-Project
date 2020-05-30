@@ -5,17 +5,19 @@ module.exports = {
   async create(req, res){
     const { titulo, autor, disponibilidade, localizacao } = req.body
     const [photo] = req.files
+    const filename = photo != undefined && photo.filename != undefined ? photo.filename : null
     try {
       await Livro.create({
         titulo,
         autor,
         disponibilidade,
         localizacao,
-        photo: photo.filename,
+        photo: filename,
         users_id: req.session.user.id,
         createdAt: new Date(),
         updatedAt: new Date(),
       })
+
       const books = await Livro.findAll({
         where: {
           users_id: {
@@ -66,6 +68,19 @@ module.exports = {
     }
   },
 */
+ 
+  async listAll(req, res){
+    const { titulo } = req.body
+    const books = await Livro.findAll({
+      where: {
+        titulo: {
+          [Op.like]: `%${titulo}%`
+        }
+      },
+      include: ['user']
+    })
+    res.render('busca', { title: 'Home', usuario:req.session.user, books});
+  },
 
   async listBooksForDonation(req, res){
     const books = await Livro.findAll({
@@ -88,7 +103,6 @@ module.exports = {
           [Op.ne]: req.session.user.id
         }
       },
-      limit: 6,
       include: ['user']
     })
     const booksForSwap = books.filter(book => book.disponibilidade != 'doar')
