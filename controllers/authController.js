@@ -40,7 +40,6 @@ const authController = {
         },
         include: ['user']
       })
-      books.map(book => console.log(book.user.first_name))
       const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
       const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 
 

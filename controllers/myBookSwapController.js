@@ -10,7 +10,6 @@ module.exports = {
         users_id: req.session.user.id
       }
     })
-    //books.map(item => console.log(item.titulo))
     res.render('listar-meus-livros-para-troca', {usuario:req.session.user, books})
   },
 

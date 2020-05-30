@@ -5,7 +5,6 @@ const userController = {
   store: async (req, res) => {
     const { nome, sobrenome, phoneNumber, email, password, rua, numero, bairro, cidade, uf, cep } = req.body;
     const hashPassword = bcrypt.hashSync(password, 10);
-    console.log(phoneNumber)
     try{
       const newUser = await User.create({
         first_name: nome,
