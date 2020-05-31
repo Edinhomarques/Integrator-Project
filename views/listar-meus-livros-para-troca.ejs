@@ -28,24 +28,36 @@
                 </div>  
               </div>
               <div class="row py-5">
+
+                
                 <%  books.map(book => { %>
                   <div class="col-lg-3 text-center p-2">                 
-                    <img src=<%= `images/img-livros/${book.photo}`%> alt="livro 1" class="img-fluid capa-livro">
+                    <img src=<%= `images/img-livros/${book.photo}`%> alt="livro 1" class=" img-fluid capa-livro">
                     <p class="m-1 nome-livro"><%= book.titulo %></p>
                     <p class="local"> <%= book.localizacao %></p>
                     <div class="d-inline-flex p-2 bd-highlight">
                       <button type="button" class="btn btn-primary mr-2 btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-id="<%= book.id %>" data-livro="<%= book.titulo %>" data-autor="<%= book.autor %>" data-local="<%= book.localizacao %>" data-imagem=<%=book.photo%> >
                         <img src="images/icons/editar.svg" alt="editar" width="20px" class="my-1">
-                      </button>  
+                      </button>
                       <form action="/listar-meus-livros-para-troca/<%=book.id%>?_method=DELETE" method="POST">
                         <!-- data-toggle="modal" data-target="#excluirModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %> data-imagem="2.jpg" -->
                         <button type="submit" class="btn btn-primary mr-2 btn-sm" >
                           <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
                         </button>
-                      </form> 
-                      <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
-                        <img src="images/icons/doar.svg" alt="doarButton" width="20px" class="my-1"> Doar
-                      </button>    
+                      </form>
+                      <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
+                        <div id="trocado"></div>
+                        <button type="button" disabled class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#emprestadoModal" data-id="<%= book.id %>" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
+                          <img src="images/icons/doar.svg" alt="emprestadoButton" width="20px" class="my-1"> Emprestar
+                        </button>
+                        <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#recebidoModal" data-livros_id="<%= book.emprestimo.dataValues.id %>" >
+                           Devolvido
+                        </button>
+                      <%} else { %>
+                        <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#emprestadoModal" data-id="<%= book.id %>" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
+                          <img src="images/icons/doar.svg" alt="emprestadoButton" width="20px" class="my-1"> Emprestar
+                        </button>
+                      <% } %>
                     </div> 
                   </div>
                 <% }) %>
@@ -214,23 +226,25 @@
   </div>
 
   <!--Modal troca-->
-  <div class="modal fade" id="trocadoModal" tabindex="-1" role="dialog" aria-labelledby="trocadoModalLabel" aria-hidden="true">
+  <div class="modal fade" id="emprestadoModal" tabindex="-1" role="dialog" aria-labelledby="emprestadoModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">          
-          <h5 class="modal-title" id="trocadoModalLabel">Marcar livro como trocado</h5>
+          <h5 class="modal-title" id="emprestadoModalLabel">Marcar livro como emprestado</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          
-          <p>Tem certeza que deseja marcar este livro como trocado?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
-        </div>
+        <form name="trocaform" id="trocaform" method="post" action="/troca">
+          <div class="modal-body">
+            <input type="text" name="idBook" id="idBook" hidden>
+            <p class="mt-3">Tem certeza que deseja marcar este livro como emprestado?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+            <button  type="submit" class="btn btn-primary">Sim</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -241,19 +255,21 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">          
-          <h5 class="modal-title" id="recebidoModalLabel">Marcar livro como recebido</h5>
+          <h5 class="modal-title" id="recebidoModalLabel">Marcar livro como devolvido</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          
-          <p>Tem certeza que deseja marcar este livro como recebido?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
-        </div>
+        <form method="post" action="/recebido">
+        <input type="text" name="idBook" id="idBook" hidden>
+          <div class="modal-body">
+            <p>Tem certeza que deseja marcar este livro como devolvido?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+            <button  type="submit" class="btn btn-primary">Sim</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -301,6 +317,33 @@
       modal.find('#autor').val(autor)
       modal.find('#localTroca').val(local)
     })
+
+    /*Trocar*/
+    $('#emprestadoModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var id = button.data('id')
+      var nomeLivro = button.data('livro') 
+      var imagem = button.data('imagem') 
+      var autor = button.data('autor') 
+      var local = button.data('local') 
+      var modal = $(this)
+
+      modal.find('#idBook').val(id)
+      modal.find('#nomeLivro').val(nomeLivro)
+      modal.find('#capaLivro').attr("src", 'images/img-livros/'+imagem)
+      modal.find('#autor').val(autor)
+      modal.find('#localTroca').val(local)
+    })
+
+    /*Receber*/
+    $('#recebidoModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var id = button.data('livros_id')
+      var modal = $(this)
+
+      modal.find('#idBook').val(id)
+    })
+
   </script>
   
 </body>

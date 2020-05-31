@@ -130,23 +130,23 @@ body{
 #doado {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 80%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../assets/doado.png) center center no-repeat;
+    background: url(../images/doado.png) center center no-repeat;
     z-index: 2;
 }
 #trocado {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
+    height: 80%;
+    top: 0px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(../assets/trocado.png) center center no-repeat;
+    background: url(../images/trocado.png) center center no-repeat;
     z-index: 2;
 }
 

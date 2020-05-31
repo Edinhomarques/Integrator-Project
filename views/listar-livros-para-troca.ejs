@@ -29,14 +29,20 @@
                 </div>  
               </div>
               <div class="row py-5">
+                
                 <% booksForSwap.map(book => { %> 
                   <div class="col-lg-3 text-center">
                     <img src="images/img-livros/<%= book.photo %>" alt="livro 1" class="img-fluid capa-livro">
                     <p class="m-1 nome-livro"><%= book.name %></p>
                     <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
                     <p class="local"><%= book.localizacao %></p>
-                    <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-number="<%= book.user.phoneNumber %>" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
-                  </div>
+                    <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
+                      <div id="trocado"></div>
+                      <button type="button" disabled class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-number="<%= book.user.phoneNumber %>" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                    <%} else { %>
+                      <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-number="<%= book.user.phoneNumber %>" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                    <% } %>
+                    </div>
                 <% }) %> 
               </div>
                 

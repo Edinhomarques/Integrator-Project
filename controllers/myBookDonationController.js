@@ -1,4 +1,4 @@
-const { Livro } = require("../models");
+const { Livro, Doacao } = require("../models");
 module.exports = {
 
   async listBookForDonation (req, res) {
@@ -6,7 +6,11 @@ module.exports = {
       where: {
         disponibilidade: 'doar',
         users_id: req.session.user.id
-      }
+      },
+      include: [{
+        model: Doacao,
+        as: 'doacao'
+      }]
     })
     res.render('listar-meus-livros-para-doacao', {usuario:req.session.user, books})
   },
@@ -23,6 +27,20 @@ module.exports = {
       where: { id: idBook }
     })
     res.redirect('/listar-meus-livros-para-doacao')
+  },
+
+  async donateBook (req, res) {
+    const { idBook} = req.body
+      console.log(idBook)
+      await Doacao.create({
+        livros_id: idBook,
+        data_doacao:new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      })
+  
+    res.redirect('listar-meus-livros-para-doacao')
+
   },
 
   async delete(req, res){

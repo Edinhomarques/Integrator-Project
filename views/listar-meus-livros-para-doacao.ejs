@@ -43,9 +43,16 @@
                           <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
                         </button>
                       </form> 
-                      <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
+                      <% if (book.doacao !== null) {%>
+                      <div id="doado"></div>
+                      <button type="button" disabled class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livros_id="<%= book.id %>" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
                         <img src="images/icons/doar.svg" alt="doarButton" width="20px" class="my-1"> Doar
-                      </button>    
+                      </button> 
+                      <%} else { %>   
+                        <button type="button"  class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#doadoModal" data-livros_id="<%= book.id %>" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
+                          <img src="images/icons/doar.svg" alt="doarButton" width="20px" class="my-1"> Doar
+                        </button>
+                      <% } %>
                     </div>                            
                   </div>
                 <% }) %>
@@ -253,14 +260,16 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          
-          <p>Tem certeza que deseja marcar este livro como doado?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
-        </div>
+        <form method="post" action="/doacao">
+          <div class="modal-body">
+            <input type="text" name="idBook" id="idBook" hidden>
+            <p>Tem certeza que deseja marcar este livro como doado?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+            <button  type="submit" class="btn btn-primary">Sim</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -331,6 +340,15 @@
       modal.find('#capaLivro').attr("src", `images/img-livros/${imagem}`)
       modal.find('#autor').val(autor)
       modal.find('#localTroca').val(local)
+    })
+
+
+    $('#doadoModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var id = button.data('livros_id')
+      var modal = $(this)
+
+      modal.find('#idBook').val(id)
     })
   </script>
 </body>

@@ -67,7 +67,12 @@
                             <p class="m-1 nome-livro"><%= book.titulo %></p>
                             <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
                             <p class="local"><%= book.localizacao %></p>
-                            <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>"">Quero este livro</a>
+                            <% if (book.doacao !== null) {%>
+                              <div id="doado"></div>
+                              <button type="button" disabled class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                            <%} else { %>
+                              <button type="button" class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                            <% } %>
                           </div>                        
                         <% })%>
                       </div>    
@@ -105,8 +110,13 @@
                             <p class="m-1 nome-livro"><%= book.titulo %></p>
                             <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
                             <p class="local"><%= book.localizacao %></p>
-                            <a href="#" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>"">Quero este livro</a>
-                          </div>                        
+                            <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
+                              <div id="trocado"></div>
+                              <button type="button" disabled class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>
+                            <%} else { %>
+                              <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>
+                            <% } %>
+                            </div>                        
                         <% })%>
                       </div>    
                   <% 

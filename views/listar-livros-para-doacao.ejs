@@ -35,9 +35,13 @@
                       <p class="m-1 nome-livro"><%= book.name %></p>
                       <p class="m-0 usuario">Disponivel por:  <%= book.user.first_name %></p>
                       <p class="local"><%= book.localizacao %></p>
-                      <button type="button" class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                      <% if (book.doacao !== null) {%>
+                        <div id="doado"></div>
+                        <button type="button" disabled class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                      <%} else { %>
+                        <button type="button" class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                        <% } %>
                     </div>
-                    
                   <% }) %>             
               </div>
                 

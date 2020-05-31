@@ -1,4 +1,4 @@
-const { User, Contato, Livro } = require("../models");
+const { User, Contato, Livro, Emprestimo } = require("../models");
 const { Op } = require('sequelize')
 const bcrypt = require("bcrypt");
 
@@ -38,7 +38,12 @@ const authController = {
             [Op.ne]: req.session.user.id
           }
         },
-        include: ['user']
+        include: [ 
+          'user',
+          {
+          model: Emprestimo,
+          as: 'emprestimo'
+        }]
       })
       const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
       const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 

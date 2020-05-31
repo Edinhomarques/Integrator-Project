@@ -5,6 +5,12 @@
         <% books.map(book => { %>
           <div class="livroBox container d-flex border-bottom py-3">
               <div class="livro-imagem-container align-self-center">
+                <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
+                  <div id="trocado"></div>
+                <%}%>
+                <% if (book.doacao !== null) {%>
+                  <div id="doado"></div>
+                <%}%>
                   <%if(book.photo){%>
                     <img class="livro-img" style="max-width: 120px;" src="/images/img-livros/<%= book.photo %>" alt="">
                   <%} else {%>

@@ -30,11 +30,14 @@ router.post("/busca", uploaBook.any(), bookController.listAll )
 /**Meus Livros para doacao */
 router.get('/listar-meus-livros-para-doacao', auth, myBookDonationController.listBookForDonation)
 router.post("/listar-meus-livros-para-doacao", myBookDonationController.updateBook )
+router.post("/doacao", myBookDonationController.donateBook )
 router.delete('/listar-meus-livros-para-doacao/:id', auth, myBookDonationController.delete)
 
 /**Meus Livros para troca */
 router.get('/listar-meus-livros-para-troca', auth, myBookSwapController.listBookForExchange)
 router.post('/listar-meus-livros-para-troca', auth, myBookSwapController.updateBook)
+router.post('/troca', auth, myBookSwapController.lentBook)
+router.post('/recebido', auth, myBookSwapController.returnBook)
 router.delete('/listar-meus-livros-para-troca/:id', auth, myBookSwapController.delete)
 
 /* Livros de outros usuarios */

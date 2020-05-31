@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Op } = require('sequelize')
-const { Livro } = require("../models");
+const { Livro, Emprestimo } = require("../models");
 
 const auth = require("../middlewares/auth");
 
@@ -29,7 +29,12 @@ router.get('/home-logado', auth,  async function(req, res, next) {
         [Op.ne]: req.session.user.id
       }
     },
-    include: ['user']
+    include: [ 
+      'user',
+      {
+      model: Emprestimo,
+      as: 'emprestimo'
+    }]
   })
   const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
   const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 

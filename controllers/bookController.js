@@ -1,4 +1,4 @@
-const { Livro } = require("../models");
+const { Livro, Emprestimo, Doacao } = require("../models");
 const { Op } = require('sequelize')
 
 module.exports = {
@@ -24,7 +24,17 @@ module.exports = {
             [Op.ne]: req.session.user.id
           }
         },
-        include: ['user']
+        include: [ 
+          'user',
+          {
+          model: Emprestimo,
+          as: 'emprestimo'
+          },
+          {
+            model: Doacao,
+            as: 'doacao'
+          }
+        ]
       })
       
       const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
@@ -77,7 +87,17 @@ module.exports = {
           [Op.like]: `%${titulo}%`
         }
       },
-      include: ['user']
+     include: [ 
+        'user',
+        {
+        model: Emprestimo,
+        as: 'emprestimo'
+        },
+        {
+          model: Doacao,
+          as: 'doacao'
+        }
+      ]
     })
     res.render('busca', { title: 'Home', usuario:req.session.user, books});
   },
@@ -89,7 +109,17 @@ module.exports = {
           [Op.ne]: req.session.user.id
         }
       },
-      include: ['user']
+      include: [ 
+        'user',
+        {
+        model: Emprestimo,
+        as: 'emprestimo'
+        },
+        {
+          model: Doacao,
+          as: 'doacao'
+        }
+      ]
     })
     books.map(book => console.log(book.user.first_name))
     const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar')
@@ -103,7 +133,17 @@ module.exports = {
           [Op.ne]: req.session.user.id
         }
       },
-      include: ['user']
+      include: [ 
+        'user',
+        {
+        model: Emprestimo,
+        as: 'emprestimo'
+        },
+        {
+          model: Doacao,
+          as: 'doacao'
+        }
+      ]
     })
     const booksForSwap = books.filter(book => book.disponibilidade != 'doar')
     res.render('listar-livros-para-troca', { title: 'Home', usuario:req.session.user, booksForSwap});
