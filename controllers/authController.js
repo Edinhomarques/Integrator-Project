@@ -1,4 +1,4 @@
-const { User, Contato, Livro, Emprestimo } = require("../models");
+const { User, Contato, Livro, Emprestimo, Doacao } = require("../models");
 const { Op } = require('sequelize')
 const bcrypt = require("bcrypt");
 
@@ -43,7 +43,11 @@ const authController = {
           {
           model: Emprestimo,
           as: 'emprestimo'
-        }]
+          },
+          {
+            model: Doacao,
+            as: 'doacao'
+          }]
       })
       const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar') 
       const booksForSwap = books.filter(book => book.disponibilidade != 'doar') 
