@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    const LivrosTable = queryInterface.createTable("emprestimos", {
+    const EmprestimosTable = queryInterface.createTable("emprestimos", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -33,7 +33,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     })
-    return LivrosTable
+    return EmprestimosTable
   },
 
   down: (queryInterface, Sequelize) => {
