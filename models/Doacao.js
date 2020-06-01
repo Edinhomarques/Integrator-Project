@@ -32,15 +32,10 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Doacao.associate = (models) => {
-    Doacao.belongsTo(models.User, {
-      foreignKey: "users_id",
-      as: "user",
-    });
     Doacao.belongsTo(models.Livro, {
       foreignKey: "livros_id",
       as: "livro",
     });
-
   }
   
     return Doacao;

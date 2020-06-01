@@ -38,15 +38,10 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Emprestimo.associate = (models) => {
-    Emprestimo.belongsTo(models.User, {
-      foreignKey: "users_id_cliente",
-      as: "user",
-    });
     Emprestimo.belongsTo(models.Livro, {
       foreignKey: "livros_id",
       as: "livro",
     });
-
   }
   
     return Emprestimo;
