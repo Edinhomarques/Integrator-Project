@@ -30,7 +30,11 @@
               <div class="row py-5">
                 <%  books.map(book => { %>
                   <div class="col-lg-3 text-center p-2">                 
-                    <img src=<%= `images/img-livros/${book.photo}`%> alt="livro 1" class="img-fluid capa-livro">
+                    <%if(book.photo){%>
+                      <img class="livro-img" style="max-width: 120px;" src="/images/img-livros/<%= book.photo %>" alt="">
+                    <%} else {%>
+                      <img class="livro-img" src="/images/icons/book.png" style="max-width: 130px; min-height: 185px;" alt="">
+                    <%}%>
                     <p class="m-1 nome-livro"><%= book.titulo %></p>
                     <p class="local"> <%= book.localizacao %></p>
                     <div class="d-inline-flex p-2 bd-highlight">

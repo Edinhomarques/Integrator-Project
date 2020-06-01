@@ -63,7 +63,11 @@
                       <div class="owl-carousel owl-carousel-booksForDonation owl-theme">                    
                         <% booksForDonation.map(book => { %>
                           <div class="text-center">
-                            <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
+                            <%if(book.photo){%>
+                              <img class="img-fluid capa-livro" style="max-width: 120px;" src="/images/img-livros/<%= book.photo %>" alt="">
+                            <%} else {%>
+                              <img class="img-fluid capa-livro" src="/images/icons/book.png" style="max-width: 130px; min-height: 185px;" alt="">
+                            <%}%>
                             <p class="m-1 nome-livro"><%= book.titulo %></p>
                             <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
                             <p class="local"><%= book.localizacao %></p>
@@ -106,7 +110,11 @@
                       <div class="owl-carousel owl-carousel-booksForSwap owl-grab">                    
                         <% booksForSwap.map(book => { %>
                           <div class="text-center">
-                            <img src="images/img-livros/<%=book.photo %> " alt="livro 1" class="img-fluid capa-livro">
+                            <%if(book.photo){%>
+                              <img class="img-fluid capa-livro" style="max-width: 120px;" src="/images/img-livros/<%= book.photo %>" alt="">
+                            <%} else {%>
+                              <img class="img-fluid capa-livro" src="/images/icons/book.png" style="max-width: 130px; min-height: 185px;" alt="">
+                            <%}%>
                             <p class="m-1 nome-livro"><%= book.titulo %></p>
                             <p class="m-0 usuario">Disponivel por: <%= book.user.first_name %></p>
                             <p class="local"><%= book.localizacao %></p>
