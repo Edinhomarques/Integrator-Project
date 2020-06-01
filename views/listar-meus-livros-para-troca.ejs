@@ -47,9 +47,6 @@
                       </form>
                       <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
                         <div id="trocado"></div>
-                        <button type="button" disabled class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#emprestadoModal" data-id="<%= book.id %>" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %>  data-imagem="2.jpg">
-                          <img src="images/icons/doar.svg" alt="emprestadoButton" width="20px" class="my-1"> Emprestar
-                        </button>
                         <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#recebidoModal" data-livros_id="<%= book.emprestimo.dataValues.id %>" >
                            Devolvido
                         </button>
