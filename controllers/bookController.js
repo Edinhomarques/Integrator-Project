@@ -111,7 +111,7 @@ module.exports = {
         }
       },
       limit: 8,
-      offset: (page - 1)*5,
+      offset: (page - 1)*8,
       include: [ 
         'user',
         {
@@ -139,7 +139,7 @@ module.exports = {
         }
       },
       limit: 8,
-      offset: (page - 1)*5,
+      offset: (page - 1)*8,
       include: [ 
         'user',
         {

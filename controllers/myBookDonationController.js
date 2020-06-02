@@ -9,7 +9,7 @@ module.exports = {
         users_id: req.session.user.id
       },
       limit: 8,
-      offset: (page - 1)*5,
+      offset: (page - 1)*8,
       include: [{
         model: Doacao,
         as: 'doacao'
