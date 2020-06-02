@@ -103,12 +103,15 @@ module.exports = {
   },
 
   async listBooksForDonation(req, res){
-    const books = await Livro.findAll({
+    const { page=1 }= req.query;
+    const {count: total, rows: books} = await Livro.findAndCountAll({
       where: {
         users_id: {
           [Op.ne]: req.session.user.id
         }
       },
+      limit: 8,
+      offset: (page - 1)*5,
       include: [ 
         'user',
         {
@@ -123,16 +126,20 @@ module.exports = {
     })
     books.map(book => console.log(book.user.first_name))
     const booksForDonation = books.filter(book => book.disponibilidade != 'emprestar')
-    res.render('listar-livros-para-doacao', { title: 'Home', usuario:req.session.user, booksForDonation}); 
+    let totalPages = Math.ceil(total/8);
+    res.render('listar-livros-para-doacao', { title: 'Home', usuario:req.session.user, booksForDonation, totalPages}); 
   },
 
   async listBookForSwap(req, res){
-    const books = await Livro.findAll({
+    const { page=1 }= req.query;
+    const {count: total, rows: books} = await Livro.findAndCountAll({
       where: {
         users_id: {
           [Op.ne]: req.session.user.id
         }
       },
+      limit: 8,
+      offset: (page - 1)*5,
       include: [ 
         'user',
         {
@@ -146,6 +153,7 @@ module.exports = {
       ]
     })
     const booksForSwap = books.filter(book => book.disponibilidade != 'doar')
-    res.render('listar-livros-para-troca', { title: 'Home', usuario:req.session.user, booksForSwap});
+    let totalPages = Math.ceil(total/8);
+    res.render('listar-livros-para-troca', { title: 'Home', usuario:req.session.user, booksForSwap, totalPages});
   }
 }

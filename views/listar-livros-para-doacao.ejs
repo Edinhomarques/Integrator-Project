@@ -29,53 +29,45 @@
               </div>
               <div class="row py-5 mb-4">
                
-                  <% booksForDonation.map(book => {%>
-                    <div class="col-lg-3 text-center">
-                      <%if(book.photo){%>
-                        <img class="livro-img" style="max-width: 120px;" src="/images/img-livros/<%= book.photo %>" alt="">
-                      <%} else {%>
-                        <img class="livro-img" src="/images/icons/book.png" style="max-width: 130px; min-height: 185px;" alt="">
-                      <%}%>
-                      <p class="m-1 nome-livro"><%= book.name %></p>
-                      <p class="m-0 usuario">Disponivel por:  <%= book.user.first_name %></p>
-                      <p class="local"><%= book.localizacao %></p>
-                      <% if (book.doacao !== null) {%>
-                        <div id="doado"></div>
-                        <button type="button" disabled class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
-                      <%} else { %>
-                        <button type="button" class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
-                        <% } %>
-                    </div>
-                  <% }) %>             
+                  <%
+                    if(booksForDonation.length > 0){
+                     booksForDonation.map(book => {%>
+                      <div class="col-lg-3 text-center">
+                        <%if(book.photo){%>
+                          <img class="livro-img" style="max-width: 130px; height: 170px;" src="/images/img-livros/<%= book.photo %>" alt="">
+                        <%} else {%>
+                          <img class="livro-img" src="/images/icons/book.png" style="max-width: 130px; height: 170px;" alt="">
+                        <%}%>
+                        <p class="m-1 nome-livro"><%= book.name %></p>
+                        <p class="m-0 usuario">Disponivel por:  <%= book.user.first_name %></p>
+                        <p class="local"><%= book.localizacao %></p>
+                        <% if (book.doacao !== null) {%>
+                          <div id="doado"></div>
+                          <button type="button" disabled class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                        <%} else { %>
+                          <button type="button" class="btn btn-primary  mb-4 btn-sm" data-toggle="modal" data-target="#livroModal" data-livro="<%= book.name %>" data-number="<%= book.user.phoneNumber %>" data-usuario="<%= book.user.first_name %>" data-local="<%= book.localizacao %>" data-imagem="<%= book.photo %>">Quero este livro</button>                                   
+                    <%} %>
+                      </div>
+                  <%})
+                  }else{
+                 %>
+                    <div class="col-sm-12">
+                      <p class="text-center">Ainda não há livros pra doação.</p>  
+                    </div>                    
+                <% } %>             
               </div>
                 
             </div>
           </div>
-
           
           <nav aria-label="Paginaçao livros ">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
+            <ul class="pagination justify-content-center">              
+              <% for(let page = 1; page <= totalPages; page++){ %>
+                <li class="page-item"><a class="page-link" href="?page=<%= page %>"><%= page %></a></li>
+              <%} %>             
             </ul>
           </nav>
           
-          
-
-
         </div>
       </div>
     </div>
