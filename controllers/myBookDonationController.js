@@ -2,17 +2,21 @@ const { Livro, Doacao } = require("../models");
 module.exports = {
 
   async listBookForDonation (req, res) {
-    const books = await Livro.findAll({
+    const { page=1 }= req.query;
+    const {count: total, rows: books} = await Livro.findAndCountAll({
       where: {
         disponibilidade: 'doar',
         users_id: req.session.user.id
       },
+      limit: 8,
+      offset: (page - 1)*5,
       include: [{
         model: Doacao,
         as: 'doacao'
       }]
     })
-    res.render('listar-meus-livros-para-doacao', {usuario:req.session.user, books})
+    let totalPages = Math.ceil(total/8);
+    res.render('listar-meus-livros-para-doacao', {usuario:req.session.user, books, totalPages})
   },
 
   async updateBook (req, res) {
