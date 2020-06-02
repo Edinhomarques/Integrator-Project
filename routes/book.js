@@ -38,7 +38,7 @@ router.get('/listar-meus-livros-para-troca', auth, myBookSwapController.listBook
 router.post('/listar-meus-livros-para-troca', auth, myBookSwapController.updateBook)
 router.post('/troca', auth, myBookSwapController.lentBook)
 router.post('/recebido', auth, myBookSwapController.returnBook)
-router.delete('/listar-meus-livros-para-troca/:id', auth, myBookSwapController.delete)
+router.delete('/listar-meus-livros-para-troca/', auth, myBookSwapController.delete)
 
 /* Livros de outros usuarios */
 router.get('/listar-livros-para-doacao', auth, bookController.listBooksForDonation);

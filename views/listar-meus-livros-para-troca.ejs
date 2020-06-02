@@ -44,12 +44,17 @@
                       <button type="button" class="btn btn-primary mr-2 btn-sm" data-toggle="modal" data-target="#editarLivroModal" data-id="<%= book.id %>" data-livro="<%= book.titulo %>" data-autor="<%= book.autor %>" data-local="<%= book.localizacao %>" data-imagem=<%=book.photo%> >
                         <img src="images/icons/editar.svg" alt="editar" width="20px" class="my-1">
                       </button>
+                      <button type="button" class="btn btn-primary mr-2 btn-sm" data-toggle="modal" data-target="#excluirLivroModal" data-id="<%= book.id %>" >
+                        <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
+                      </button>
+
                       <form action="/listar-meus-livros-para-troca/<%=book.id%>?_method=DELETE" method="POST">
                         <!-- data-toggle="modal" data-target="#excluirModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %> data-imagem="2.jpg" -->
                         <button type="submit" class="btn btn-primary mr-2 btn-sm" >
                           <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
                         </button>
                       </form>
+
                       <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
                         <div id="trocado"></div>
                         <button type="button" class="btn btn-primary mx-auto btn-sm" data-toggle="modal" data-target="#recebidoModal" data-livros_id="<%= book.emprestimo.dataValues.id %>" >
@@ -191,7 +196,7 @@
   </div>
 
   <!--Modal excluir-->
-  <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
+  <div class="modal fade" id="excluirLivroModal" tabindex="-1" role="dialog" aria-labelledby="excluirLivroModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">          
@@ -200,9 +205,16 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">          
-          <p>Tem certeza que deseja excluir esse livro?</p>
-        </div>
+        <form name="deleteform" id="deleteform" method="post" action="/listar-meus-livros-para-troca?_method=DELETE">
+          <div class="modal-body">
+            <input type="text" name="idBook" id="idBook" hidden>
+            <p class="mt-3">Tem certeza que deseja excluir esse livro?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+            <button  type="submit" class="btn btn-primary">Sim</button>
+          </div>
+        </form>        
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
           <button type="button" class="btn btn-primary">Sim</button>
@@ -302,6 +314,15 @@
       modal.find('#capaLivro').attr("src", 'images/img-livros/'+imagem)
       modal.find('#autor').val(autor)
       modal.find('#localTroca').val(local)
+    })
+
+    /*Excluir*/
+    $('#excluirLivroModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var id = button.data('id')
+      var modal = $(this)
+
+      modal.find('#idBook').val(id)
     })
 
     /*Trocar*/
