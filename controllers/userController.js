@@ -73,7 +73,22 @@ const userController = {
       where:{users_id:id}
     });
 
-    return res.render('home', { title: 'Home' });
+    req.session.user = {
+      id: req.session.user.id,
+      email: email,
+      first_name:nome,
+      last_name: sobrenome,
+      avatar: req.session.user.avatar,
+      userContato:{
+        rua:rua,
+        numero: numero,
+        bairro: bairro,
+        cidade: cidade,
+        uf: uf,
+      }
+    };
+
+    return res.render('perfil', { usuario: req.session.user, title: 'Perfil' });
   },
 
   updateAvatar: async (req, res) => {
