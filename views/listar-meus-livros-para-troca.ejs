@@ -46,14 +46,7 @@
                       </button>
                       <button type="button" class="btn btn-primary mr-2 btn-sm" data-toggle="modal" data-target="#excluirLivroModal" data-id="<%= book.id %>" >
                         <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
-                      </button>
-
-                      <form action="/listar-meus-livros-para-troca/<%=book.id%>?_method=DELETE" method="POST">
-                        <!-- data-toggle="modal" data-target="#excluirModal" data-livro=<%= book.titulo %> data-autor= <%= book.autor %> data-local= <%= book.localizacao %> data-imagem="2.jpg" -->
-                        <button type="submit" class="btn btn-primary mr-2 btn-sm" >
-                          <img src="images/icons/deletar.svg" alt="deletar" width="20px" class="my-1">
-                        </button>
-                      </form>
+                      </button>                    
 
                       <% if (book.emprestimo !== null && book.emprestimo.dataValues.data_devolucao==null) {%>
                         <div id="trocado"></div>
@@ -214,11 +207,7 @@
             <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
             <button  type="submit" class="btn btn-primary">Sim</button>
           </div>
-        </form>        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Sim</button>
-        </div>
+        </form>     
       </div>
     </div>
   </div>

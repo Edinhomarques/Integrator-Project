@@ -48,11 +48,19 @@ module.exports = {
   },
 
   async delete(req, res){
-    try {
-      const { id } = req.params;
 
+    const { idBook } = req.body;
+    try {    
+      await Doacao.destroy({
+        where: {livros_id: idBook}
+      })
+    }catch (error) {
+      console.log(error)
+    }
+
+    try {    
       await Livro.destroy({
-        where: {id: id}
+        where: {id: idBook}
       })
     } catch (error) {
       console.log(error)
