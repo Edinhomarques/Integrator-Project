@@ -18,6 +18,9 @@ router.get('/comofazerparte', function(req, res, next) {
 router.get('/blog', function(req, res, next) {
   res.render('blog', { title: 'Blog', usuario:req.session.user});
 });
+router.get('/postagemBlog', function(req, res, next) {
+  res.render('postagemBlog', { title: 'Blog', usuario:req.session.user});
+});
 router.get('/contato', function(req, res, next) {
   res.render('contato', { title: 'Blog', usuario:req.session.user});
 });
