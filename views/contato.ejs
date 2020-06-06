@@ -7,23 +7,24 @@
           <p class="text-center mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
           <div class="row justify-content-center pb-5">
             <div class="col-md-6">
-              <form>
+              <form id="messageForm">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="name" placeholder="Nome">
+                  <input type="text" required class="form-control" id="nameMessage" placeholder="Nome">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                  <input type="email" required class="form-control" id="emailMessage" aria-describedby="emailHelp" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="assunto" placeholder="Assunto">
+                    <input type="text" required class="form-control" id="assuntoMessage" placeholder="Assunto">
                   </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                  <textarea required class="form-control" id="message" rows="3" placeholder="Mensagem"></textarea>
                 </div>
                 <button type="submit" class="btn btn-dark mb-5">Enviar</button>
               </form>
+              </div>
+              <div class="text-lg-left  col-12" id="resposta"></div>
             </div>
-          </div>
         </section>
       </section>
 </main>

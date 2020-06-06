@@ -1,5 +1,5 @@
 <%- include('./partials/header') %>
-    
+
     <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselIndicators" data-slide-to="0" class="active">ok</li>
@@ -40,7 +40,33 @@
           </div>
         </div>
       </section>
+
       <!-- Fim de quem somos -->
+      <section id="newsletter" class=" mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <h2 class="text-lg-left pt-3 pb-4 m-0">Assine Nossa Newsletter</h2>
+              
+              <form  id="newsletterForm">
+                <div class="row">
+                  <div class="col pr-0">
+                    <input type="text" required class=" form-control" name="nome" id="nomeNewsletter"  placeholder="Nome"/>
+                  </div>
+                  <div class="col">
+                    <input type="email" required class="form-control" name="email" id="emailNewsletter" placeholder="Email">
+                  </div>
+                  <button type="submit" class="btn btn-dark">Cadastrar</button>
+                </div>
+              </form>
+              <div class="py-3 text-lg-left" id="resposta">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Fim de newsletter -->
       <section id="Eventos" class="py-5 mb-5">
         <div class="container">
           <div class="row">
