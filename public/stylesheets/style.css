@@ -4,6 +4,9 @@
   padding: 0;
 }
 
+body{
+  padding-top: 57px;
+}
 
 button {
   width: 130px;
